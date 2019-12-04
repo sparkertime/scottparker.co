@@ -4,7 +4,7 @@
     font-family: 'Source Sans Pro';
     font-weight: 300;
 
-    a {
+    a, a:visited, a:active, a:hover {
         color: rgba(0, 0, 0, 0.8);
         font-size: 36px !important;
 
@@ -12,4 +12,31 @@
             font-weight: bold;
         }
     }
+}
+
+.navlinks {
+    a, a:visited, a:active, a:hover {
+        color: rgba(0, 0, 0, 0.8);
+        font-family: 'Source Sans Pro';
+        font-weight: bold;
+        text-transform: uppercase;
+        display: inline-block;
+        margin-left: 0.5rem;
+        font-size: 18px;
+    }
+}
+
+h2 {
+    font-family: 'Source Sans Pro';
+    font-weight: bold;
+    font-size: 48px;
+
+    a, a:visited, a:active, a:hover {
+        color: #000;
+        text-decoration: none;
+    }
+}
+
+.post {
+    margin-top: 1rem;
 }

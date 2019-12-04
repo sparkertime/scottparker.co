@@ -23,12 +23,26 @@
 <body>
     <header class="navbar">
         <section class="navbar-section">
-            <a href="..." class="navbar-brand"><span class="brand__main">scottparker</span>.co</a>
+            <a href="/" class="navbar-brand"><span class="brand__main">scottparker</span>.co</a>
         </section>
         <section class="navbar-section">
             scott parker is an engineering leader and roleplayer in chicago
         </section>
     </header>
+
+    <div class='container'>
+        <div class='columns'>
+            <div class='navlinks column col-auto'>
+                <a href='/'>Home</a>
+                <a href='/about'>About</a>
+                <a href='/rss'>RSS</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container grid-lg">
+        {{ content }}
+    </div>
 </body>
 
 </html>
