@@ -1,9 +1,7 @@
 ---
 layout: default
 ---
-
-<div class="columns">
-    {% for page in paginator.posts %}
-        {% include single-post.html %}
-    {% endfor %}
-</div>
+{% for page in paginator.posts %}
+    {% include single-post.html %}
+    <hr />
+{% endfor %}

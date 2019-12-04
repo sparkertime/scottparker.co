@@ -44,3 +44,24 @@ h1 {
         margin-bottom: 1rem;
     }
 }
+
+hr {
+    border: none;
+    border-top: 1px #ddd;
+    border-top-style: double;
+    color: #333;
+    overflow: visible;
+    text-align: center;
+    height: 5px;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+hr:after {
+    background: #fff;
+    content: '§';
+    color: #666;
+    padding: 0 4px;
+    position: relative;
+    top: -13px;
+}
