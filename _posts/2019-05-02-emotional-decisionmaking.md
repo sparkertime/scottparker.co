@@ -6,7 +6,7 @@ I've been reading THINKING FAST AND SLOW by Daniel Kahneman. There is a real ris
 
 It includes this really interesting tangent on the possible role of emotion in making good decisions. From the author:
 
-> Neuroscientist Antonio Damasio proposed that people's emotional evaluations of outcomes, and the bodily states and the approach and avoidance tendancies associated with them, all play a central role in guiding decision making. Damasio and his colleagues have observed that people who do not display the appropriate emotions before the decide, sometimes because of brain damage, also have an impaired ability to make good decisions. **An inability to be guided by a "healthy fear" of bad consequences is a disastrous flaw.**
+> Neuroscientist Antonio Damasio proposed that people's emotional evaluations of outcomes, and the bodily states and the approach and avoidance tendancies associated with them, all play a central role in guiding decision making. Damasio and his colleagues have observed that people who do not display the appropriate emotions before they decide, sometimes because of brain damage, also have an impaired ability to make good decisions. **An inability to be guided by a "healthy fear" of bad consequences is a disastrous flaw.**
 
 (emphasis mine)
 
