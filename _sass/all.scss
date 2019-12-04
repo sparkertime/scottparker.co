@@ -1,7 +1,12 @@
+body {
+    padding-bottom: 5rem;
+    font-family: 'Open Sans', sans-serif;
+}
+
 .navbar {
     background-color: #F7F6F4;
     padding: 0.5rem 1rem;
-    font-family: 'Source Sans Pro';
+    font-family: 'Source Sans Pro', sans-serif;
     font-weight: 300;
 
     a, a:visited, a:active, a:hover {
@@ -33,6 +38,15 @@ h1 {
         color: #000;
         text-decoration: none;
     }
+}
+
+h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 1rem;
 }
 
 .page {
