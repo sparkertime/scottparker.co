@@ -13,3 +13,35 @@
     </div>
     {{ page.content }}
 </section>
+
+{% if include.only_post %}
+    {% assign displayed_posts = 0 %}
+    <div class="recent-posts">
+        <h3>Recent Posts</h4>
+        <div class="columns">
+            {% for post in site.posts limit:5 %}
+                {% if post.id == page.id or displayed_posts >= 4 %}
+                    {% continue %}
+                {% endif %}
+                {% assign displayed_posts = displayed_posts | plus: 1 %}
+                <div class='column col-3 col-mx-auto'>
+                    <h4>
+                        <a href="{{ post.url | relative_url }}" rel="permalink">{{ post.title }}</a>
+                    </h4>
+                    {% if post.teaser %}
+                        <div class="teaser">
+                            <a href="{{ post.url | relative_url }}" rel="permalink"><img src="{{ post.teaser | relative_url }}" alt=""></a>
+                        </div>
+                        <p itemprop="description">
+                            {{ post.description | markdownify | strip_html }}
+                        </p>
+                    {% else %}
+                        <p itemprop="description">
+                            {{ post.excerpt | markdownify | strip_html | truncate: 320 }}
+                        </p>
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}

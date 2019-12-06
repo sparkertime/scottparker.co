@@ -1,7 +1,6 @@
 ---
 title: MadisonRuby Miscellanea
-header:
-  teaser: /images/2011-08-20-rock-spar.jpg
+teaser: /images/2011-08-20-rock-spar.jpg
 ---
 
 ![](/images/2011-08-20-rock-spar.jpg)

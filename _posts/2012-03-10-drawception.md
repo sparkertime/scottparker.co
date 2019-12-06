@@ -1,7 +1,6 @@
 ---
 title:  drawception
-header:
-  teaser: /images/2012-03-10-drawception.png
+teaser: /images/2012-03-10-drawception.png
 ---
 
 ![](/images/2012-03-10-drawception.png)

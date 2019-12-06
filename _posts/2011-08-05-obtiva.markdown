@@ -1,7 +1,6 @@
 ---
 title: obtiva
-header:
-  teaser: /images/2011-08-05-tunnels.jpg
+teaser: /images/2011-08-05-tunnels.jpg
 ---
 
 ![](/images/2011-08-05-tunnels.jpg)
