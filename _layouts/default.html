@@ -6,7 +6,20 @@
 <head>
     <meta charset="utf-8">
     <title></title>
-    <meta name="description" content="">
+    {% if page.title %}
+        <meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">
+    {% endif %}
+    {% if page.description %}
+        <meta itemprop="description" content="{{ page.description | markdownify | strip_html | strip_newlines | escape_once }}">
+    {% elsif page.excerpt %}
+        <meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">
+    {% endif %}
+    {% if page.date %}
+        <meta itemprop="datePublished" content="{{ page.date | date: "%B %d, %Y" }}">
+    {% endif %}
+    {% if page.teaser %}
+        <meta property="og:image" content="{{ page.teaser }}">
+    {% endif %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="apple-touch-icon" href="icon.png">
