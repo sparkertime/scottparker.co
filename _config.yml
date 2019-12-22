@@ -48,6 +48,7 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
   - _drafts
+  - _assets
   - README.md
   - CNAME
   - todo.md
