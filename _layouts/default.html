@@ -5,7 +5,13 @@
 
 <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>scottparker.co |
+        {% if page.title %}
+            {{ page.title | markdownify | strip_html | strip_newlines | escape_once }}
+        {% else %}
+            Scott Parker is an engineering leader and roleplayer in Chicago
+        {% endif %}
+    </title>
     {% if page.title %}
         <meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">
     {% endif %}
