@@ -11,7 +11,7 @@
         {% endcase %}
         {{ page.date | date: "%Y" }}
     </div>
-    {% if page.categories %}
+    {% if page.categories[0] %}
         <div class='category'>Posted in <a href='/category/{{ page.categories[0] }}'>{{ page.categories[0] }}</a></div>
     {% endif %}
     <div class='content'>

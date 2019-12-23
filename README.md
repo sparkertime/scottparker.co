@@ -8,4 +8,4 @@ This blog is built on Jekyll.
 
 ## Local Development
 
-`bundle install` followed by `bundle jekyll serve` will run this blog locally.
+`bundle install` followed by `script/serve` will run this blog locally.

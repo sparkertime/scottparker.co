@@ -45,7 +45,6 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
-  - _drafts
   - _assets
   - README.md
   - CNAME
