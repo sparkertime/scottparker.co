@@ -1,0 +1,12 @@
+---
+layout: default
+---
+<h2>Latest Posts in {{ page.tag | capitalize }}</h2>
+
+{% for category in site.categories %}
+    {% if category[0] == page.tag %}
+        {% for page in category[1] %}
+            {% include single-post.html %}
+        {% endfor %}
+    {% endif %}
+{% endfor %}

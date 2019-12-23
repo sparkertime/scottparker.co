@@ -2,6 +2,7 @@
 title:  Announcing SWSheets
 date:   2015-05-26
 tags: starwars rpg swrpg swsheets.com
+categories: roleplaying
 ---
 
 I’m proud to share something I’ve been working on for the past few months, [swsheets.com](http://swsheets.com).

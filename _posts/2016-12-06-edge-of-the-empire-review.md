@@ -2,7 +2,7 @@
 title:  Edge of the Empire Review
 date:   2015-06-11
 tags: starwars rpg swrpg review
-categories: games
+categories: roleplaying
 ---
 
 The Edge of the Empire roleplaying game by Fantasy Flight Games, much like its oft-discussed dice, is a mix of success and failure. Its ideas are simultaneously brilliant and half-baked. It’s a system that will help players and GMs collaborate on exciting and unexpected adventures. It’s also a system that requires extensive house ruling and often contradicts itself. After two years of playing I can’t exactly recommend it, but I also won’t stop playing it anytime soon.

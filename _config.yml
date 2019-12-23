@@ -51,6 +51,10 @@ exclude:
   - CNAME
   - todo.md
 
+collections:
+  category:
+    output: true
+
 defaults:
   # _posts
   - scope:
@@ -58,3 +62,8 @@ defaults:
       type: posts
     values:
       layout: post
+  - scope:
+      path: ""
+      type: category
+    values:
+      layout: "category"

@@ -2,6 +2,7 @@
 title:  SWSheets - Out of Beta!
 date:   2015-06-04
 tags: starwars rpg swrpg swsheets.com
+categories: roleplaying
 ---
 
 I’m happy to announce that [SWSheets.com](http://swsheets.com) has officially left Beta. No terribly serious issues were found by the first round users. The most severe were that I totally forgot about the Medicine skill and that I had an ordering issue with large sets of talents or attacks on a character.

@@ -11,7 +11,12 @@
         {% endcase %}
         {{ page.date | date: "%Y" }}
     </div>
-    {{ page.content }}
+    {% if page.categories %}
+        <div class='category'>Posted in <a href='/category/{{ page.categories[0] }}'>{{ page.categories[0] }}</a></div>
+    {% endif %}
+    <div class='content'>
+        {{ page.content }}
+    </div>
 </section>
 
 {% if include.only_post %}

@@ -1,7 +1,6 @@
 ---
 title: Tales of Maj'Eyal
 tags: review
-categories: games
 ---
 
 ![](/images/2013-02-18-tome.jpg)

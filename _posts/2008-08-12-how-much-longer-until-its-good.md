@@ -2,7 +2,6 @@
 title:  How Much Longer Until It's Good?
 date:   2008-08-12
 categories: leadership
-categories: games
 ---
 
 I have a bit of an ~~insecurity~~ obsession with the quality of my code given how long I've been at this programming thing. I know that must seem like an awfully vain thing to wonder about, the technological equivalent of thinking about every passerby "Am I hotter than that guy?"
