@@ -1,6 +1,7 @@
 ---
 title:  Culture-Driven Onboarding
 date:   2018-08-07
+categories: leadership
 ---
 
 Friends know that I endlessly talk about team values. They've made a huge difference in my career - I still have a framed copy of Obtiva's values next to my desk (complete with our Big Hairy Audacious Goal courtesy of [Dave Hoover](http://redsquirrel.com)).

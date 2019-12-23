@@ -3,6 +3,7 @@ title:  GenCon 2018 Mini-Reviews
 tags:   boardgames review
 description: Recently I returned from the Best Four Days in Gaming,  GenCon. In no particular order, here’s some microreviews of what I played.
 teaser: /images/2018-08-13-oink.png
+categories: games
 ---
 
 {% include figure caption='Oink Games games really are teensy.' image_path="/images/2018-08-13-oink.png" %}

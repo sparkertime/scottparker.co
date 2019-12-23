@@ -1,6 +1,7 @@
 ---
 title:  Five Minute Checkins
 date:   2018-07-16
+categories: leadership
 ---
 Let's say you only have 5 minutes with one of your teammates to answer the question "How satisfied is this person with their job?” What do you ask and what do you look for?
 

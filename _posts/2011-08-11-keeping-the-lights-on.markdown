@@ -1,5 +1,6 @@
 ---
 title: Keeping the Lights On
+categories: leadership
 ---
 
 A hundred years ago, lighting lamps was a great way to earn a living. You'd carry around a giant pole and go from lamp to lamp lighting them up. See the city while starting fires, I can see the appeal. Many others did too and created a rich set of traditions, practices, and quirks.

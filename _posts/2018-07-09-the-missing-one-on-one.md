@@ -1,6 +1,7 @@
 ---
 title:  The Missing One-on-One
 date:   2018-07-09
+categories: leadership
 ---
 
 Many new managers define 1:1 meetings as something like "a regular opportunity for a manager and their direct report to check in." That's a fine starting point but it misses out on a significant learning opportunity for leaders of all skill levels: **the peer one-on-one**.

@@ -1,6 +1,7 @@
 ---
 title:  "Leading by Example Isn't Enough"
 date:   2018-06-25
+categories: leadership
 ---
 
 In a recent coaching session, a manager said of a teammate "Why can't they follow my example and act more like me?" It's a natural desire but an effective manager has to recognize a hard truth: leading by example doesn't work, at least not the way we expect. That's not to say we shouldn't use it, but as managers we shouldn't expect any behavioral changes in others based solely on how we conduct ourselves.

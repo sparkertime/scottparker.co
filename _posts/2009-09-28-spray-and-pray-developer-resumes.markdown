@@ -1,6 +1,7 @@
 ---
 title: Spray-and-Pray Developer Resumes
 teaser: /images/2009-09-28-resume.jpg
+categories: leadership
 ---
 
 ![](/images/2009-09-28-resume.jpg)

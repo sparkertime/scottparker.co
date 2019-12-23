@@ -1,5 +1,6 @@
 ---
 title: Emotional Decision Making
+categories: leadership
 ---
 
 I've been reading THINKING FAST AND SLOW by Daniel Kahneman. There is a real risk this blog temporarily becomes flooded by small bits from this fascinating work. 

@@ -3,6 +3,7 @@ title: Dungeon Fate
 teaser: /images/2018-08-14-dungeon-fate.jpg
 description: My mashup of Dungeon World and Fate Accelerated. It's a mixed success.
 tags: rpg dungeon-world fate
+categories: games
 ---
 
 ![]( {{ "/images/2018-08-14-dungeon-fate.jpg" | absolute_url }})

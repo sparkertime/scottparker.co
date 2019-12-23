@@ -2,6 +2,7 @@
 title:  My Hero’s Journey of GMing
 date:   2015-04-29
 tags: rpg swrpg
+categories: games
 ---
 
 I run a Star Wars role playing group that meets every three weeks. Ten sessions in, I have a good grasp on how I react to this emotionally. Here’s a timeline of how that 21-day cycle invariably plays out:

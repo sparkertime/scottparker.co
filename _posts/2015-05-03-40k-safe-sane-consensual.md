@@ -2,6 +2,7 @@
 title:  40K – Safe, Sane, and Consensual
 date:   2015-05-03
 tags: gaming wh40k
+categories: games
 ---
 
 ### [40K: Safe, Sane and Consensual, or The Arrogance of Unacknowledged Playstyles](http://www.belloflostsouls.net/2015/04/40k-safe-sane-and-consensual-or-the-arrogance-of-unacknowledged-playstyles.html)

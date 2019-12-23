@@ -2,6 +2,7 @@
 title:  Netrunner Drafting Guide & Deckbuilding Basics
 date:   2014-12-26
 tags: netrunner
+categories: games
 ---
 
 _We're doing a Netrunner draft at [Braintree](https://www.braintreepayments.com/) soon after the New Year. I wanted to send the new drafters a cheatsheet on their first draft. Since I couldn't find any online, I wrote my own._

@@ -2,6 +2,7 @@
 title:  Keythoughts on Keyflower
 date:   2014-02-1
 tags:   boardgames review
+categories: games
 ---
 
 "Worker Placement" in board gaming dates back to roughly the turn of the century, but recently there has been a second wave of games experimenting within the mechanic. Keyflower is the most ambitious of these that I have played. While I found the whole lesser than the sum of its parts, it has some rather clever ideas that I want to celebrate.

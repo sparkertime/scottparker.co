@@ -2,6 +2,7 @@
 title:  More Books on Games Than You Have Any Interest in Reading
 date:   2008-07-29
 tags:   review
+categories: games
 ---
 
 In a loose worst-to-best order, here are some random thoughts about books on video games I've been reading recently. Most are worth reading but if you can only read one, the best of them, “[My Tiny Life](http://www.lulu.com/content/1070691),” is also the most free.

@@ -2,6 +2,7 @@
 title:  Ten the Hard Way - A Netrunner Love Letter
 date:   2014-03-11
 tags: netrunner
+categories: games
 ---
 
 ![](/images/2014-03-11-account-siphon.png)

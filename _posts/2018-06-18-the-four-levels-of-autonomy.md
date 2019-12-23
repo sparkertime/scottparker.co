@@ -1,6 +1,7 @@
 ---
 title:  "The Four Levels of Autonomy"
 date:   2018-06-18
+categories: leadership
 ---
 Engineers crave explicit feedback and expectations, and yet it's often hard to provide these when coaching on ownership and leadership. It's frustrating for all involved - as managers, we want to provide goals but oftentimes struggle to go beyond "I want you to handle problems like I do." To solve this, I've found the following tool super helpful for this - the Four Levels of Autonomy. I'll outline them briefly and then explain how I use them.
 

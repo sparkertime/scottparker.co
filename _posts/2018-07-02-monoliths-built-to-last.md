@@ -1,6 +1,7 @@
 ---
 title:  Monoliths Built to Last
 date:   2018-07-02
+categories: leadership
 ---
 
 Here’s a fun fact about my career: in almost a decade of working in Ruby, I’ve never been paid to write `rails new` into a console.
