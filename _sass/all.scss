@@ -232,3 +232,20 @@ figcaption {
 table {
   margin-bottom: 1.2rem;
 }
+
+.categories {
+  padding: 0.8rem;
+  font-size: 0.6rem;
+
+  h2 {
+    font-size: 0.7rem;
+  }
+
+  ul {
+    margin: 0;
+  }
+
+  li {
+    list-style: none;
+  }
+}
