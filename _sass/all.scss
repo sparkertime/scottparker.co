@@ -83,6 +83,12 @@ h3 {
 
     .content {
       margin-top: 1rem;
+
+      img {
+        max-height: 500px;
+        display: block;
+        margin: 0 auto;
+      }
     }
 }
 
