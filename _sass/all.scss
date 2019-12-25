@@ -84,8 +84,9 @@ h3 {
     .content {
       margin-top: 1rem;
 
-      img {
+      img, iframe {
         max-height: 500px;
+        max-width: 90%;
         display: block;
         margin: 0 auto;
       }
