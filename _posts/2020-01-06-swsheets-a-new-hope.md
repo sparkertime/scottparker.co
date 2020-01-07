@@ -6,7 +6,7 @@ teaser: /images/2020-01-06-swsheets.png
 
 {% include figure caption='and a hero was found' image_path="/images/2020-01-06-swsheets.png" %}
 
-After years of operating swsheets.com, I finally found someone with the ability and enthusiasm to add new features. As of today, I've handed over all assets and ownership of the servers and domain. I posted a full announcement over on the [FFG Forums](https://community.fantasyflightgames.com/topic/304147-swsheets-under-new-stewardship) and [the SWRPG subreddit](https://www.reddit.com/r/swrpg/comments/el3cw3/swsheets_under_new_stewardship/). I just wanted to capture some more personal thoughts here on my blog.
+After years of operating [swsheets.com](http://swsheets.com), I finally found someone with the ability and enthusiasm to add new features. As of today, I've handed over all assets and ownership of the servers and domain. I posted a full announcement over on the [FFG Forums](https://community.fantasyflightgames.com/topic/304147-swsheets-under-new-stewardship) and [the SWRPG subreddit](https://www.reddit.com/r/swrpg/comments/el3cw3/swsheets_under_new_stewardship/). I just wanted to capture some more personal thoughts here on my blog.
 
 I started swsheets.com at a time when I had both enthusiasm for FFG's Star Wars RPG system as well as a fair amount of free time on my hands. Both waned over the years, and by the time I joined Reverb in 2017 I had lost both my enthusiasm for the game and much of my free time.
 
