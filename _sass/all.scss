@@ -88,14 +88,21 @@ h3 {
         max-height: 500px;
         max-width: 90%;
         display: block;
-        margin: 0 auto;
+        margin: 1rem auto;
       }
     }
 }
 
 hr {
+  border-top: 1px #ccc;
+  border-top-style: solid;
+  margin: 1rem auto;
+  width: 50%;
+}
+
+hr.article-divider {
     border: none;
-    border-top: 1px #ddd;
+    border-top: 3px #ccc;
     border-top-style: double;
     color: #333;
     overflow: visible;
@@ -103,9 +110,10 @@ hr {
     height: 5px;
     margin-top: 2rem;
     margin-bottom: 1rem;
+    width: 90%;
 }
 
-hr:after {
+hr.article-divider:after {
     background: #fff;
     content: '§';
     color: #666;

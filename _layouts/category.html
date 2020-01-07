@@ -7,7 +7,7 @@ layout: default
     {% if category[0] == page.tag %}
         {% for page in category[1] %}
             {% include single-post.html %}
-            <hr />
+            <hr class='article-divider' />
         {% endfor %}
     {% endif %}
 {% endfor %}

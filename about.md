@@ -24,3 +24,5 @@ I'm the founder and primary administrator of [SWSheets](http://swsheets.com) and
 
 * [LinkedIn](https://linkedin.com/in/scottpparker)
 * [Github](https://github.com/sparkertime)
+* [Goodreads](https://www.goodreads.com/user/show/5400288-scott-parker)
+* [Letterboxd](https://letterboxd.com/hellosparker/)
