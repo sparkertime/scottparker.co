@@ -16,4 +16,4 @@ Oh yeah, and this: **I took my final presentation for my graphics class less tha
 
 ![](/images/2005-12-07-shot-3.jpg)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/o76RB9o-Cq4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/o76RB9o-Cq4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>

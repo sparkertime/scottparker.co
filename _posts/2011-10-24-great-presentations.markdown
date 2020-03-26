@@ -4,7 +4,7 @@ title: Great Presentations
 
 I spent some quality time this weekend digging into a few presentations that I thought I'd share with you.
 
-Let's start with the [Shibuya Rubyist Lunch lightning talk](https://www.youtube.com/watch?v=i5zBVyWsc_Q) from RubyConf 2011. It's short, about three minutes, and will set the right tone for what's to come. You can't help but feel joy when you see the enthusiasm of the audience and speaker for one another. This video encapsulates why I love the Ruby community dearly.
+Let's start with the [Shibuya Rubyist Lunch lightning talk](https://www.youtube-nocookie.com/watch?v=i5zBVyWsc_Q) from RubyConf 2011. It's short, about three minutes, and will set the right tone for what's to come. You can't help but feel joy when you see the enthusiasm of the audience and speaker for one another. This video encapsulates why I love the Ruby community dearly.
 
 Rich Hickey's talk from Strange Loop 2011, "[Simple Made Easy](http://www.infoq.com/presentations/Simple-Made-Easy)," is the best presentation I've seen in years. Rich makes the case that we have abandoned the concept of "simple" entirely in a slavish pursuit of "easy." It's incredibly thought-provoking - see Uncle Bob's follow-up, for instance. It also gives the best context yet for Rich's disregard for testing. Definitely have to watch this sometime - it's already given us a new word, "complect."
 

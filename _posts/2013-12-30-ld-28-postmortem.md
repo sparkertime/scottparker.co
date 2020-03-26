@@ -21,7 +21,7 @@ The game is more or less as I had imagined, albeit with a few missing bells and 
 ## What Worked Well
 * __Knowing Unity__ - this time around, I knew the tools somewhat before going in. I have yet to finish a game in Unity, but I have banged out a couple of rough prototypes prior to this. In particular, the [Catlike Coding tutorials](http://catlikecoding.com/unity/tutorials/) were very helpful.
 * __Comradery__ - While I remain a fan of the solo format, leaving home to gather with like-minded hackers was extremely helpful. Just as in my daily work, my colleagues inspire me to be better than I am.
-* __One Fun Thing__ - I took [Tom Francis' advice](http://www.youtube.com/watch?v=btYWNND2vo0) and made a game around one fun mechanic and prototyped that mechanic immediately. I spent a lot of time making sure the fire-breathing looked and felt just so, but I think that was time extremely well spent. It's still fun to fly around and set things on fire, even if you don't understand what the game is really about.
+* __One Fun Thing__ - I took [Tom Francis' advice](http://www.youtube-nocookie.com/watch?v=btYWNND2vo0) and made a game around one fun mechanic and prototyped that mechanic immediately. I spent a lot of time making sure the fire-breathing looked and felt just so, but I think that was time extremely well spent. It's still fun to fly around and set things on fire, even if you don't understand what the game is really about.
 
 ## What Didn't Go Well
 * __3D Modeling__ - I realized I needed better tooling to make the ork fortresses, which is where I started to spin my wheels. Google Sketchup is a straightforward enough tool, but I really found it hard to navigate. I have a license to Blender somewhere - I need to dig it up and rediscover that tool.
