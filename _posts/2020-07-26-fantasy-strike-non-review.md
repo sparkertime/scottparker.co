@@ -1,5 +1,7 @@
 ---
 title: A Non-Review of Fantasy Strike in Two Images
+description: SIRLIN IS BABA
+tags: gaming
 teaser: /images/2020-07-26-sirlin-is-baba.png
 ---
 

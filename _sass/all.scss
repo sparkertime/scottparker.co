@@ -215,6 +215,12 @@ figure {
     flex-direction: column;
 }
 
+
+.page .content figure.full > img {
+  max-width: 90%;
+  max-height: none;
+}
+
 /* Figure captions */
 
 figcaption {
