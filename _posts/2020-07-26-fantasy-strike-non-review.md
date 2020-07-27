@@ -31,4 +31,4 @@ I'm not half as clever as Sirlin so you just get two images and some lame jokes 
 
 I'll keep rooting for Fantasy Strike to become more truly diverse and noob-friendly over time.
 
-[^1]: Not entirely generic - it sounds like fun to fight as a watchmaker or a painter in a sensible outfit who could swing her arms without a serious chest injury. More like those two, please.
+[^1]: One likely reason the art is problematic is that no one appears to care too much. Characters are defined in promotional material by generic descriptors like "fire," "martial arts," and "sword." Also note how the last two characters in the roster are drawn in a different art style. It's notable only because Fantasy Strike's design is so precise in other areas - [you can read all about the frame-by-frame animation and netcode here](http://www.sirlin.net/posts/fantasy-strikes-features) for instance.
