@@ -25,10 +25,10 @@ This was enough to make me call it a day.
 
 ---
 
-Sirlin once wrote [a detailed analysis of why HBO should remake the last season of Game of Thrones](http://www.sirlin.net/posts/game-of-thrones-what-went-wrong). He did this because he was a fan who loved the show he imagined it might have been.
+Sirlin once wrote [a detailed analysis of why HBO should remake the last season of Game of Thrones](http://www.sirlin.net/posts/game-of-thrones-what-went-wrong). He did this because he was a fan who loved the show it might have been.
 
-I'm not half as clever as Sirlin so you just get two images and some lame jokes to make a similar point. I love what I imagine Fantasy Strike might have been if it was tested with people who fall outside the typical pro fighting circuit demographic. As it stands, I'm not sure who this game is for.
+I'm not half as clever as Sirlin so you just get two images and some lame jokes to make a similar point. I love what Fantasy Strike might have been if it was tested with people who fall outside the typical pro fighting circuit demographic. As it stands, I'm not sure who this game is for.
 
 I'll keep rooting for Fantasy Strike to become more truly diverse and noob-friendly over time.
 
-[^1]: One likely reason the characters are problematic is that no one appears to care too much. They are defined in promotional material by generic descriptors like "fire," "martial arts," and "sword." Also note how the last two characters in the roster are drawn in a different art style. It's notable only because Fantasy Strike's design is so precise in other areas - [you can read all about the frame-by-frame animation and netcode here](http://www.sirlin.net/posts/fantasy-strikes-features) for instance.
+[^1]: One likely reason the characters are problematic is that no one appears to care too much. They are defined in promotional material by generic descriptors like "fire," "martial arts," and "sword." Also note how the last two characters in the roster are drawn in a different art style. These minor quibbles stand out because Fantasy Strike's design is otherwise so precise - [you can read all about the frame-by-frame animation and netcode here](http://www.sirlin.net/posts/fantasy-strikes-features) for instance.

@@ -3,7 +3,7 @@ title: A Re-Review of Edge of the Empire in One Player Aid
 description: Player needs aid badly.
 tags: rpg eote
 categories: roleplaying
-teaser: /images/2020-07-27-how-to-roll.png
+teaser: /images/2020-07-27-teaser.png
 ---
 
 Lately it seems [I can only express my concerns in images](https://scottparker.co/fantasy-strike-non-review/). I suppose that is some classic Pisces energy.
