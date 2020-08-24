@@ -274,7 +274,7 @@ I never mentioned my colony again because it never mattered. Nothing interesting
 
 After most losses I ask myself if there was anything I could have done to win. I only see two major mistakes - I should have brought Henry, not Brandon, into France and I should have offered the Pope almost anything he wanted for a divorce (I especially should have offered mercs up in earnest, they were basically useless to me at that point).
 
-A possible third mistake is not saber-rattling with France during our Turn 4 Diplomacy phase to get a better deal to end our war. One one hand, it seems unlikely that I could have gotten a card draw out of France in exchange for ending the war, and nothing else would have helped. On the other, I was definitely losing in VP so I should have been more risk-seeking. Extending the war with France would have been very bad for England (no Edward so no 5 VP) but it would have also been very bad for France.
+A possible third mistake is not saber-rattling with France during our Turn 4 Diplomacy phase to get a better deal to end our war. On one hand, it seems unlikely that I could have gotten a card draw out of France in exchange for ending the war, and nothing else would have helped. On the other, I was definitely losing in VP so I should have been more risk-seeking. Extending the war with France would have been very bad for England (no Edward so no 5 VP) but it would have also been very bad for France.
 
 However, I don't think correcting any of these mistakes would have changed my game. Several of these would have helped me hurt France but the die was cast at that point – if France didn't win, the Ottomans would have.
 
