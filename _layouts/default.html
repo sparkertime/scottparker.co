@@ -5,26 +5,25 @@
 
 <head>
     <meta charset="utf-8">
-    <title>scottparker.co |
+    <title>scottparker.co
         {% if page.title %}
-            {{ page.title | markdownify | strip_html | strip_newlines | escape_once }}
-        {% else %}
-            Scott Parker is an engineering leader and roleplayer in Chicago
+        | {{ page.title | markdownify | strip_html | strip_newlines | escape_once }}
         {% endif %}
     </title>
     {% if page.title %}
-        <meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">
+    <meta itemprop="headline" content="{{ page.title | markdownify | strip_html | strip_newlines | escape_once }}">
     {% endif %}
     {% if page.description %}
-        <meta itemprop="description" content="{{ page.description | markdownify | strip_html | strip_newlines | escape_once }}">
+    <meta itemprop="description"
+        content="{{ page.description | markdownify | strip_html | strip_newlines | escape_once }}">
     {% elsif page.excerpt %}
-        <meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">
+    <meta itemprop="description" content="{{ page.excerpt | markdownify | strip_html | strip_newlines | escape_once }}">
     {% endif %}
     {% if page.date %}
-        <meta itemprop="datePublished" content="{{ page.date | date: "%B %d, %Y" }}">
+    <meta itemprop="datePublished" content="{{ page.date | date: " %B %d, %Y" }}">
     {% endif %}
     {% if page.teaser %}
-        <meta property="og:image" content="{{ page.teaser }}">
+    <meta property="og:image" content="{{ page.teaser }}">
     {% endif %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -37,7 +36,7 @@
     <link rel="apple-touch-icon" sizes="144x144" href="/images/favicon/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="/images/favicon/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
@@ -50,7 +49,9 @@
     <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
     <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
 
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i|Source+Sans+Pro:300,400,700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i|Source+Sans+Pro:300,400,700&display=swap"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="/css/site.css">
 </head>
@@ -59,9 +60,6 @@
     <header class="navbar">
         <section class="navbar-section">
             <a href="/" class="navbar-brand"><span class="brand__main">scottparker</span>.co</a>
-        </section>
-        <section class="navbar-section hide-sm">
-            scott parker is an engineering leader and roleplayer in chicago
         </section>
     </header>
 
@@ -75,14 +73,6 @@
         </div>
         <div class='columns'>
         </div>
-    </div>
-    
-    <div class='categories float-left hide-xl'>
-        <h2>Categories</h2>
-        <ul>
-            <li><a href="/category/leadership">Leadership</a></li>
-            <li><a href="/category/roleplaying">Roleplaying</a></li>
-        </ul>
     </div>
 
     <div class="container grid-lg">
