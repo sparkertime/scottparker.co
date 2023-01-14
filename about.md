@@ -18,7 +18,7 @@ I built [SWSheets](http://swsheets.com) and [TI4Rules](https://ti4rules.github.i
 
 ## Where Else To Find Me
 
-* [Mastodon](https://mastodon.social/sparker)
+* [Mastodon](https://mastodon.social/@sparker)
 * [Github](https://github.com/sparkertime)
 * [Goodreads](https://www.goodreads.com/user/show/5400288-scott-parker)
 * [Letterboxd](https://letterboxd.com/hellosparker/)
