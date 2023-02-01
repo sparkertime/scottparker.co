@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-![](/images/headshot-small.jpeg)
+![](/images/headshot-small.png)
 
 Hello! I'm Scott Parker.
 

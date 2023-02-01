@@ -1,7 +1,7 @@
 ---
 ---
 <!doctype html>
-<html class="no-js" lang="">
+<html>
 
 <head>
     <meta charset="utf-8">
@@ -27,56 +27,44 @@
     {% endif %}
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="/images/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/images/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/images/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="/images/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="/images/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="/images/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon/android-icon-192x192.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="/images/favicon/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/images/favicon/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+    <link rel="manifest" href="/images/favicon/site.webmanifest">
 
-    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-exp.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/spectre.css/dist/spectre-icons.min.css">
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i|Source+Sans+Pro:300,400,700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,300;0,400;0,700;1,400&family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet">
-
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
     <link rel="stylesheet" href="/css/site.css">
 </head>
 
-<body>
-    <header class="navbar">
-        <section class="navbar-section">
-            <a href="/" class="navbar-brand"><span class="brand__main">scottparker</span>.co</a>
-        </section>
-    </header>
-
-    <div class='container'>
-        <div class='columns'>
-            <div class='navlinks column col-auto'>
-                <a href='/'>Home</a>
-                <a href='/about'>About</a>
-                <a href='https://feeds.feedburner.com/citizenparker'>RSS</a>
+<body class="bg-slate-50 pb-10">
+    <navbar class='bg-slate-800 flex px-4 py-2 text-slate-50 border-sky-400 border-b-2'>
+        <a href="https://scottparker.co" class='grow flex gap-3 my-2'>
+            <div class="border-r-2 border-slate-50 p-3 pl-0">
+                <img src="/images/logo.svg" class="h-full" />
             </div>
+            <div class="flex flex-col">
+                <span class="font-bold text-3xl">Scott Parker</span>
+                <span class="text-sky-400 leading-none">Scott is a generally okay human</span>
+                <span class="text-fuchsia-400 leading-none">He writes on this website sometimes</span>
+            </div>
+        </a>
+        <div class="flex uppercase items-end gap-6 text-lg">
+            <a class="text-slate-50 border-b border-sky-600 leading-5" href="/">Blog</a>
+            <a class="text-slate-50 border-b border-sky-600 leading-5" href="/about">About</a>
+            <a class="text-slate-50 border-b border-sky-600 leading-5"
+                href="https://feeds.feedburner.com/citizenparker">RSS</a>
         </div>
-        <div class='columns'>
-        </div>
-    </div>
+    </navbar>
 
-    <div class="container grid-lg">
-        {{ content }}
+    <div class="border-t-2 border-fuchsia-400">
+        <div class="content max-w-3xl mx-auto pt-14 p-4">
+            {{ content }}
+        </div>
     </div>
 </body>
 

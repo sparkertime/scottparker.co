@@ -1,32 +1,38 @@
-
 {% assign displayed_posts = 0 %}
-<div class="recent-posts">
-    <h3>Recent Posts
-        {% if category %} in {{ category | capitalize }} {% endif %}
+<hr class="break my-4" />
+
+<div>
+    <h3 class="text-xl text-center my-3">Recent Posts
+        {% if category %} in {{ category | capitalize}} <a class="inline-block pl-2 underline"
+            href='/category/{{ category }}'>(view
+            all)</a>
+        {% endif %}
     </h3>
-    <div class="columns">
-        {% for post in related_posts limit:5 %}
-            {% if post.id == page.id or displayed_posts >= 4 %}
-                {% continue %}
-            {% endif %}
-            {% assign displayed_posts = displayed_posts | plus: 1 %}
-            <div class='column col-3 col-mx-auto'>
-                <h4>
-                    <a href="{{ post.url | relative_url }}" rel="permalink">{{ post.title }}</a>
-                </h4>
-                {% if post.teaser %}
-                    <div class="teaser">
-                        <a href="{{ post.url | relative_url }}" rel="permalink"><img src="{{ post.teaser | relative_url }}" alt=""></a>
-                    </div>
-                    <p itemprop="description">
-                        {{ post.description | markdownify | strip_html }}
-                    </p>
-                {% else %}
-                    <p itemprop="description">
-                        {{ post.excerpt | markdownify | strip_html | truncate: 320 }}
-                    </p>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        {% for post in related_posts limit:4 %}
+        {% if post.id == page.id or displayed_posts >= 3 %}
+        {% continue %}
+        {% endif %}
+        {% assign displayed_posts = displayed_posts | plus: 1 %}
+        {% if displayed_posts == 3 %}
+        <a class="hidden md:block" href="{{ post.url | relative_url }}" rel="permalink">
+            {% else %}
+            <a class="" href="{{ post.url | relative_url }}" rel="permalink">
                 {% endif %}
-            </div>
-        {% endfor %}
+                <h4 class="text-lg font-semibold a-default mb-2">{{ post.title }}</h4>
+                {% if post.teaser %}
+                <div class="w-full">
+                    <img src="{{ post.teaser | relative_url }}" alt="">
+                </div>
+                <p itemprop="description" class="text-xs">
+                    {{ post.description | markdownify | strip_html }}
+                </p>
+                {% else %}
+                <p itemprop="description" class="text-xs">
+                    {{ post.excerpt | markdownify | strip_html | truncate: 320 }}
+                </p>
+                {% endif %}
+            </a>
+            {% endfor %}
     </div>
 </div>

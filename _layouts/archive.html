@@ -2,20 +2,25 @@
 layout: default
 ---
 {% for page in paginator.posts %}
-    {% include single-post.html %}
-    <hr class='article-divider' />
+{% include single-post.html %}
+<hr class='article-divider' />
 {% endfor %}
 
-<section class='paging'>
+<section class='my-10 flex'>
     {% if paginator.next_page %}
-        <a class='float-left' href="/page/{{ paginator.next_page }}">&laquo; Older</a>
+    <a class='block text-left bg-fuchsia-400 text-slate-50 py-4 px-7 font-bold uppercase'
+        href="/page/{{ paginator.next_page }}">&laquo;
+        Older</a>
     {% endif %}
 
+    <div class="grow"></div>
+
     {% if paginator.previous_page %}
-        {% if paginator.previous_page == 1 %}
-            <a class='float-right' href="/">Newer &raquo;</a>
-        {% else %}
-            <a class='float-right' href="/page/{{ paginator.previous_page }}">Newer &raquo;</a>
-        {% endif %}
+    {% if paginator.previous_page == 1 %}
+    <a class='block text-right bg-fuchsia-400 text-slate-50 py-4 px-7 font-bold uppercase' href="/">Newer &raquo;</a>
+    {% else %}
+    <a class='block text-right bg-fuchsia-400 text-slate-50 py-4 px-7 font-bold uppercase'
+        href="/page/{{ paginator.previous_page }}">Newer &raquo;</a>
+    {% endif %}
     {% endif %}
 </section>

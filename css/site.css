@@ -1,0 +1,73 @@
+body {
+  font-family: 'Merriweather', serif;
+}
+
+navbar,
+.font-title,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Alegreya Sans', sans-serif;
+}
+
+.prose a,
+.a-default {
+  --tw-text-opacity: 1;
+  color: rgb(192 38 211) !important;
+  cursor: pointer;
+  text-decoration-line: underline;
+}
+
+.prose a:hover,
+.a-default:hover {
+  --tw-text-opacity: 1;
+  color: rgb(134 25 143) !important;
+  cursor: pointer;
+  text-decoration-line: underline;
+}
+
+.content img,
+.content iframe {
+  max-height: 500px;
+  max-width: 90%;
+  display: block;
+  margin: 1rem auto;
+}
+
+hr:not(.break) {
+  border-top: 1px #ccc;
+  border-top-style: solid;
+  width: 50%;
+  margin: 1rem auto;
+}
+
+hr.article-divider {
+  border: none;
+  border-top: 3px #ccc;
+  border-top-style: double;
+  color: #333;
+  overflow: visible;
+  text-align: center;
+  height: 5px;
+  margin: 1rem auto;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  width: 90%;
+}
+
+hr.article-divider:after {
+  background: #fff;
+  content: '§';
+  color: #666;
+  padding: 0 4px;
+  position: relative;
+  top: -13px;
+}
+
+blockquote p:first-of-type::before,
+blockquote p:first-of-type::after {
+  content: ''
+}

@@ -1,1 +1,0 @@
-* Add "leadership," "games" tags

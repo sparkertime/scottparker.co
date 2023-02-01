@@ -1,31 +1,40 @@
-<section class='page'>
-    <h1><a href='{{ page.url }}' class='title'>{{ page.title }}</a></h2>
-    <div class='date'>
-        {% assign d = page.date | date: "%-d"  %}
-        {{ page.date | date: "%A, %B" }} 
-        {% case d %}
+<section>
+    <div class="flex flex-col gap-2 mb-6 font-title">
+        <h1 class="text-6xl font-bold relative">
+            <div class='text-slate-200 absolute -left-10'>#</div>
+            <a class='hover:underline' href='{{ page.url }}'>{{ page.title }}</a>
+        </h1>
+        <div class='text-slate-500 leading-3'>
+            {% assign d = page.date | date: "%-d" %}
+            {{ page.date | date: "%A, %B" }}
+            {% case d %}
             {% when '1' or '21' or '31' %}{{ d }}st,
             {% when '2' or '22' %}{{ d }}nd,
             {% when '3' or '23' %}{{ d }}rd,
             {% else %}{{ d }}th,
-        {% endcase %}
-        {{ page.date | date: "%Y" }}
+            {% endcase %}
+            {{ page.date | date: "%Y" }}
+        </div>
+        {% if page.categories[0] %}
+        <div class='text-slate-500 leading-3'>Posted in <a class="a-default"
+                href='/category/{{ page.categories[0] }}'>{{
+                page.categories[0]
+                }}</a>
+        </div>
+        {% endif %}
     </div>
-    {% if page.categories[0] %}
-        <div class='category'>Posted in <a href='/category/{{ page.categories[0] }}'>{{ page.categories[0] }}</a></div>
-    {% endif %}
-    <div class='content'>
+    <div class='prose max-w-none'>
         {{ page.content }}
     </div>
 </section>
 
 {% if include.only_post %}
-    {% if page.categories[0] %}
-        {% assign category = page.categories[0] %}
-        {% assign related_posts = site.categories[category] %}
-        {% include related_posts.html %}
-    {% else %}
-        {% assign related_posts = site.posts %}
-        {% include related_posts.html %}
-    {% endif %}
+{% if page.categories[0] %}
+{% assign category = page.categories[0] %}
+{% assign related_posts = site.categories[category] %}
+{% include related_posts.html %}
+{% else %}
+{% assign related_posts = site.posts %}
+{% include related_posts.html %}
+{% endif %}
 {% endif %}
