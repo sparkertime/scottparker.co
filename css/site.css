@@ -71,3 +71,51 @@ blockquote p:first-of-type::before,
 blockquote p:first-of-type::after {
   content: ''
 }
+
+figure {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: start;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 2em 0;
+}
+
+figure img,
+figure iframe,
+figure .fluid-width-video-wrapper {
+  margin-bottom: 1em;
+}
+
+figure img {
+  max-width: 70%;
+  border-radius: 4px;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+}
+
+figure>a {
+  display: block;
+}
+
+.figure-include {
+  flex-direction: column;
+}
+
+.content figure.full>img {
+  max-width: 100%;
+  max-height: none;
+}
+
+/* Figure captions */
+
+
+/* Figure captions - some evilness to get around tailwind doing it's own thing */
+.prose :where(figcaption):not(:where([class~="not-prose"] *)):not(.foo) {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  color: rgb(148, 163, 184);
+  font-size: 0.8em;
+}
