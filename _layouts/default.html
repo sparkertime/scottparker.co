@@ -44,8 +44,8 @@
 
 <body class="bg-slate-50 pb-10">
     <navbar class='bg-slate-800 flex px-4 py-2 text-slate-50 border-sky-400 border-b-2'>
-        <a href="https://scottparker.co" class='grow flex gap-3 my-2'>
-            <div class="sm:border-r-2 border-slate-50 h-14 sm:h-full p-3 pl-0">
+        <a href="https://scottparker.co" class='grow flex items-center gap-0 sm:gap-3 my-2'>
+            <div class="sm:border-r-2 border-slate-50 hidden sm:block h-full p-3 pl-0">
                 <img src="/images/logo.svg" class="h-full" />
             </div>
             <div class="hidden sm:flex flex-col">
@@ -53,8 +53,11 @@
                 <span class="text-sky-400 leading-none">Scott is a generally okay human</span>
                 <span class="text-fuchsia-400 leading-none">He writes on this website sometimes</span>
             </div>
+            <div class="flex sm:hidden flex-col">
+                <span class="font-bold text-xl">scottparker.co</span>
+            </div>
         </a>
-        <div class="flex uppercase items-end gap-6 text-lg">
+        <div class="flex uppercase items-center sm:items-end gap-6 text-lg">
             <a class="text-slate-50 border-b border-sky-600 leading-5" href="/">Blog</a>
             <a class="text-slate-50 border-b border-sky-600 leading-5" href="/about">About</a>
             <a class="text-slate-50 border-b border-sky-600 leading-5"
