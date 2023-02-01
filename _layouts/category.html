@@ -1,13 +1,13 @@
 ---
 layout: default
 ---
-<h2>Latest Posts in {{ page.tag | capitalize }}</h2>
+<h2 class="text-xl border-b mb-8 border-slate-400">Latest Posts in Category "{{ page.tag | capitalize }}"</h2>
 
 {% for category in site.categories %}
-    {% if category[0] == page.tag %}
-        {% for page in category[1] %}
-            {% include single-post.html %}
-            <hr class='article-divider' />
-        {% endfor %}
-    {% endif %}
+{% if category[0] == page.tag %}
+{% for page in category[1] %}
+{% include single-post.html %}
+<hr class='article-divider' />
+{% endfor %}
+{% endif %}
 {% endfor %}
