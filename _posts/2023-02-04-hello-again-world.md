@@ -26,7 +26,7 @@ My folder of unfinished blog drafts became as unruly as my org charts. I'd write
 
 > Sidebar: There's a reason that your VP probably doesn't talk much. It is often just an opportunity for unforced errors, a way to create problems where none previously existed. People will get hurt, or they'll think you're playing favorites, or minor omissions will balloon into major problems after people inevitably compare notes. The odds of a problem are low in any single interaction but you talk all day so it's bound to happen sooner or later. Eventually it's just easier to be boring.
 >
-> (I'm not complaining exactly - being boring came very naturally to me.)
+> (I'm not complaining, exactly - being boring came to me very naturally.)
 
 There's other career baggage too - the pressure to be some kind of inspirational thought leader or the fear that my words could bring shame upon my employer. Every so often a job candidate would mention they looked at my blog and I would think "shit, I wonder what stupid shit they found that I should take down or whether they found me using words like 'shit' on my blog."
 
