@@ -10,7 +10,7 @@ Cracking the case of "Who killed scottparker.co ?" is not particularly hard - it
 
 <hr>
 
-The heyday of this blog began in 2005 when my soon-to-be-wife said "every nerd I've ever met has a half-built website that's perpetually 'coming soon'." That was all I needed to finish coding it in PHP the following weekend. This golden age lasted for about a decade until 2015 or so when posts gradually slowed from a stream to a trickle to what is now, if I'm generous, an occasional drip.
+The heyday of this blog began in 2005 when my soon-to-be-wife said "every nerd I've ever met has a half-built website that's perpetually 'coming soon'." That was all I needed to finish coding it in PHP the following weekend. This golden age lasted for about a decade until 2015 or so when posts gradually slowed from a stream, to a trickle, to what is now, if I'm generous, an occasional drip.
 
 ## The usual suspects
 
