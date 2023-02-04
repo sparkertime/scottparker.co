@@ -24,7 +24,9 @@ Both of the factors above pale in comparison to the impact of my career. Since 2
 
 My folder of unfinished blog drafts became as unruly as my org charts. I'd write for a few moments and then wonder "Could someone in my organization take offense? Could someone take this out of context?" In large organizations, the answer is "yes."  Always. I'd abandon the draft shortly after this inevitable realization and decide yet another topic was off-limits.
 
-> Sidebar: There's a reason that your VP probably doesn't talk much. It is often just an opportunity for unforced errors, a way to create problems where none previously existed. People will get hurt, or they'll think you're playing favorites, or minor omissions will balloon into major problems after people inevitably compare notes. The odds of a problem are low in any single interaction but you talk all day so it's bound to happen sooner or later. Eventually it's just easier to be boring. (I'm not complaining exactly - being boring came very naturally to me.)
+> Sidebar: There's a reason that your VP probably doesn't talk much. It is often just an opportunity for unforced errors, a way to create problems where none previously existed. People will get hurt, or they'll think you're playing favorites, or minor omissions will balloon into major problems after people inevitably compare notes. The odds of a problem are low in any single interaction but you talk all day so it's bound to happen sooner or later. Eventually it's just easier to be boring.
+>
+> (I'm not complaining exactly - being boring came very naturally to me.)
 
 There's other career baggage too - the pressure to be some kind of inspirational thought leader or the fear that my words could bring shame upon my employer. Every so often a job candidate would mention they looked at my blog and I would think "shit, I wonder what stupid shit they found that I should take down or whether they found me using words like 'shit' on my blog."
 
