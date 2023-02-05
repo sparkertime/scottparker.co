@@ -16,7 +16,7 @@ The heyday of this blog began in 2005 when my soon-to-be-wife said "every nerd I
 
 Much has been made of social media's impact on blogging but Twitter was only a minor factor. Tweeting never took the place of blogging exactly but I think my brain became accustomed to thinking in 140 characters. Blog posts started feeling like so much _work_ whereas they used to be a relaxing, natural outlet.
 
-Aging also played a role. Words take somewhat more effort now, forcing me to spend more time with each sentence. Age also cooled some of the fires that inspired me to write in the first place. Early posts were frequently borne from playful frustration, outrages I felt, or outrages I wanted to instigate. I'm an old, boring man now – things are fine and people are fine but no one wants to read a post entitled "Hey, everything is fine and I guess that's fine."
+Aging also played a role. Words take somewhat more effort now, forcing me to spend more time with each sentence. Age also cooled some of the fires that inspired me to write in the first place. Early posts were frequently borne from playful frustration, outrages I felt, or outrages I wanted to instigate. Now I'm an old, boring man – things are fine and people are fine but no one wants to read a post entitled "Hey, everything is fine and I guess that's fine."
 
 ## With very little power comes great, possibly imaginary responsibility
 
