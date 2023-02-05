@@ -14,7 +14,7 @@ The heyday of this blog began in 2005 when my soon-to-be-wife said "every nerd I
 
 ## The usual suspects
 
-Much has been made of social media's impact on blogging but Twitter was only a minor factor. Tweeting never took the place of blogging exactly but I think my brain became accustomed to thinking in 140 characters. Blog posts started feeling like so much _work_ whereas they used to be a relaxing, natural outlet.
+Much has been made of social media's impact on blogging but Twitter was only a minor factor. Tweeting never took the place of blogging but I think my brain became accustomed to thinking in 140 characters. Blog posts started feeling like _so much work_ whereas they used to be a relaxing, natural outlet.
 
 Aging also played a role. Words take somewhat more effort now, forcing me to spend more time with each sentence. Age also cooled some of the fires that inspired me to write in the first place. Early posts were frequently borne from playful frustration, outrages I felt, or outrages I wanted to instigate. Now I'm an old, boring man – things are fine and people are fine but no one wants to read a post entitled "Hey, everything is fine and I guess that's fine."
 
@@ -26,7 +26,7 @@ My folder of unfinished blog drafts became as unruly as my org charts. I'd write
 
 > Sidebar: There's a reason that your VP probably doesn't talk much. It is often just an opportunity for unforced errors, a way to create problems where none previously existed. People will get hurt, or they'll think you're playing favorites, or minor omissions will balloon into major problems after people inevitably compare notes. The odds of a problem are low in any single interaction but you talk all day so it's bound to happen sooner or later. Eventually it's just easier to be boring.
 >
-> (I'm not complaining, exactly - being boring came to me very naturally.)
+> (I'm not complaining - being boring came to me very naturally)
 
 There's other career baggage too - the pressure to be some kind of inspirational thought leader or the fear that my words could bring shame upon my employer. Every so often a job candidate would mention they looked at my blog and I would think "shit, I wonder what stupid shit they found that I should take down or whether they found me using words like 'shit' on my blog."
 
