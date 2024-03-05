@@ -119,3 +119,18 @@ figure>a {
   color: rgb(148, 163, 184);
   font-size: 0.8em;
 }
+
+.prose code {
+  background-color: #eee;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+
+.prose :where(code):not(:where([class~="not-prose"], [class~="not-prose"] *))::before,
+.prose :where(code):not(:where([class~="not-prose"], [class~="not-prose"] *))::after {
+  content: none !important;
+}
+
+.footnotes {
+  font-size: 0.9em !important;
+}
