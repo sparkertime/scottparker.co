@@ -23,10 +23,9 @@ But I want to talk further about the bigger picture and my hopes & dreams for th
 
 Finding and buying roleplaying games digitally is just as frustrating in 2024 as it was when I started RPG Seeker in 2020.
 
-* **DriveThruRPG** is the leading option. It has received a fresh coat of paint recently but underneath it's still an antiquated, difficult experience. It has an enormous userbase though, a fact they use to justify some borderline capricious business practices. In particular, they take enormous cuts from RPG creators unless they agree to sell exclusively on DTRPG.
+* **DriveThruRPG** is the leading option. It has received a fresh coat of paint recently but underneath it's still an antiquated, difficult experience. It has an enormous userbase though, and many of them are comfortable enough with the experience to browse DTRPG for new titles. This creates light network effects that DTRPG uses to justify an enormous take rate from RPG creators unless they agree to sell exclusively on DTRPG.
 * **Itch.io** is the second-most popular option. It's far kinder to creators and allows an unrivaled level of personalization. However, creators are on their own – almost no one is browsing Itch to find new roleplaying games. Furthermore, their catalog of RPGs is so much smaller than the rest of their inventory that it seems destined to remain an afterthought to Itch.
-
-That leaves creators with the option of running their own storefronts. Shopify, LeanPub, Gumroad, and similar platforms are all popular options but carry very similar pros & cons to Itch. They can be great experiences but creators get very little to help boost discovery.
+* Some creators turn to running their own storefronts. Shopify, LeanPub, Gumroad, and similar platforms are all popular options but carry very similar pros & cons to Itch. They can be great experiences but creators get very little to help boost discovery.
 
 Most creators end up begrudgingly listing their games on both DTRPG and Itch, pushing Itch to their fanbase but relying on DTRPG for discovery.
 
@@ -44,7 +43,7 @@ But that was just step one in my previously unannounced secret plan. This is fro
 > 2. Use that critical mass to solve one of the classic problems of bootstrapping a new marketplace: you won't get sellers offering their products without users, but you won't get users without sellers.
 > 3. Turn RPG Seeker into a better marketplace for buying RPGs
 
-I couldn't talk about this dream openly as RPG Seeker existed only through the good graces of the awesome DriveThruRPG marketing & engineering teams. We spoke every so often, they are lovely people, and if they had decided to shut down my access then I would have pulled the plug on RPG Seeker a long time ago.
+I couldn't talk about this dream openly as RPG Seeker existed only through the good graces of the awesome DriveThruRPG marketing & engineering teams. We spoke every so often, they are lovely people, and if they had decided to shut down my access then I would have pulled the plug on RPG Seeker much earlier.
 
 So if there's an upside to calling it quits on this incarnation of RPG Seeker, it's that I can finally talk openly about how much I'd love to build a better marketplace for roleplayers that directly competes with the existing players.
 
@@ -56,4 +55,4 @@ In the meantime, if you're a creator or publisher reading this and have thoughts
 
 Until next time.
 
-[^1]: I *am* taking an extended break from pursuing that goal, however. There are a few complications in my life nowadays, not the least of which is how much I enjoy [what I'm doing professionally](https://www.dekudeals.com). Choosing to do something means choosing not to do 10,000 other things.
+[^1]: I am taking an extended break from pursuing that goal, however. My life has changed from when I started RPG Seeker – notably, I enjoy [what I'm doing professionally](https://www.dekudeals.com) unlike ever before in my career. Choosing to do something means choosing not to do 10,000 other things.
