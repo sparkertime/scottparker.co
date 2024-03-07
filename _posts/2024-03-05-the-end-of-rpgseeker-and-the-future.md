@@ -1,13 +1,13 @@
 ---
 title: "The end of RPG Seeker and the future of RPG marketplaces"
-description: I'm done with roleplaying deal alerts, but I don't think I'm done with helping roleplaying find great games
+description: I'm done with roleplaying deal alerts, but I'm still passionate about helping roleplayers find great games
 categories: roleplaying
 teaser: /images/2024-03-05-rpgseeker.png
 ---
 
 {% include figure image_path="/images/2024-03-05-rpgseeker.png" %}
 
-This weekend I emailed the following to all registered users of RPG Seeker:
+This past weekend I emailed the following to all registered users of RPG Seeker:
 
 > I'm shutting down RPG Seeker on March 23rd, 2024. I've had a great time building and operating this site, but doing so costs me time & money on a project that frankly hasn't found traction.
 > 
