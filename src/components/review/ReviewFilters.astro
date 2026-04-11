@@ -75,11 +75,11 @@ const TYPE_LABELS: Record<string, string> = {
     const empty = document.getElementById('reviews-empty');
     if (empty) empty.style.display = visible === 0 ? '' : 'none';
 
-    // Sync URL params so the link is shareable and back-button restores state
-    const params = new URLSearchParams();
-    if (type)   params.set('type',   type);
-    if (rating) params.set('rating', rating);
-    if (year)   params.set('year',   year);
+    // Sync URL params — preserve any params we don't own (e.g. ?view=grid)
+    const params = new URLSearchParams(location.search);
+    type   ? params.set('type',   type)   : params.delete('type');
+    rating ? params.set('rating', rating) : params.delete('rating');
+    year   ? params.set('year',   year)   : params.delete('year');
     const qs = params.toString();
     history.replaceState(null, '', qs ? `?${qs}` : location.pathname);
   }
