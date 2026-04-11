@@ -83,6 +83,14 @@ function label(code, collection) {
 
 function pad(s, n) { return s.padEnd(n); }
 
+/** Count commits ahead of the remote tracking branch. Returns 0 if no upstream. */
+function unpushedCount() {
+  try {
+    const out = capture('git', ['log', '@{u}..HEAD', '--oneline']);
+    return out.trim().split('\n').filter(Boolean).length;
+  } catch { return 0; }
+}
+
 // ── Frontmatter validation ────────────────────────────────────────────────────
 
 function validateFrontmatter() {
@@ -203,8 +211,22 @@ async function main() {
   const contentChanges = changes.filter(e => isContentFile(e.file));
   const otherChanges   = changes.filter(e => !isContentFile(e.file));
 
-  if (changes.length === 0) {
-    console.log('ℹ️   Nothing to commit. Working tree is clean.\n');
+  const ahead = unpushedCount();
+
+  if (changes.length === 0 && ahead === 0) {
+    console.log('ℹ️   Nothing to commit or push. Working tree is clean.\n');
+    process.exit(0);
+  }
+
+  if (changes.length === 0 && ahead > 0) {
+    console.log(`ℹ️   Nothing to commit — but ${ahead} unpushed commit(s) on this branch.\n`);
+    const doPush = await confirm({ message: 'Push now?', default: true });
+    if (doPush) {
+      spawnSync('git', ['push'], { stdio: 'inherit', cwd: ROOT });
+      console.log('\n✅  Done.\n');
+    } else {
+      console.log('\nNot pushed.\n');
+    }
     process.exit(0);
   }
 
@@ -250,7 +272,7 @@ async function main() {
   console.log('');
 
   // 9. Optionally push
-  const doPush = await confirm({ message: 'Push to remote?', default: true });
+  const doPush = await confirm({ message: `Push to remote? (${unpushedCount()} commit(s) ahead)`, default: true });
   if (doPush) {
     spawnSync('git', ['push'], { stdio: 'inherit', cwd: ROOT });
     console.log('\n✅  Done.\n');
