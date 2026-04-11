@@ -1,0 +1,65 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../components/layout/BaseLayout.astro';
+import Figure from '../../components/Figure.astro';
+import PostMeta from '../../components/post/PostMeta.astro';
+import TagList from '../../components/post/TagList.astro';
+import { cleanSlug } from '../../utils/slugify';
+
+export async function getStaticPaths({ paginate }: { paginate: Function }) {
+  const allPosts = (await getCollection('posts', (p: CollectionEntry<'posts'>) => !p.data.draft))
+    .sort((a: CollectionEntry<'posts'>, b: CollectionEntry<'posts'>) => b.data.date.valueOf() - a.data.date.valueOf());
+
+  return paginate(allPosts, { pageSize: 10 })
+    .filter((p: any) => p.props.page.currentPage > 1);
+}
+
+const { page } = Astro.props as {
+  page: { data: CollectionEntry<'posts'>[]; currentPage: number; url: { prev?: string; next?: string } }
+};
+
+const rendered = await Promise.all(
+  page.data.map(async post => ({
+    entry: post,
+    url: `/posts/${cleanSlug(post.slug)}/`,
+    Content: (await post.render()).Content,
+  }))
+);
+---
+<BaseLayout title={`Page ${page.currentPage}`}>
+  <div class="max-w-3xl mx-auto pt-10 p-4">
+    {rendered.map((item, i) => (
+      <>
+        <article class="content">
+          <div class="flex flex-col gap-2 mb-6">
+            <h2 class="text-4xl sm:text-5xl font-bold font-sans relative">
+              <span class="text-slate-200 absolute -left-8 select-none hidden sm:inline">#</span>
+              <a class="hover:underline" href={item.url}>{item.entry.data.title}</a>
+            </h2>
+            <PostMeta date={item.entry.data.date} categories={item.entry.data.categories} />
+            <TagList tags={item.entry.data.tags} />
+          </div>
+          <div class="prose max-w-none">
+            <item.Content components={{ Figure }} />
+          </div>
+        </article>
+
+        {i < rendered.length - 1 && <hr class="article-divider" />}
+      </>
+    ))}
+
+    <div class="flex justify-between mt-12 font-sans text-sm">
+      {page.url.next ? (
+        <a href={page.url.next} class="px-4 py-2 bg-fuchsia-600 text-white rounded hover:bg-fuchsia-700 transition-colors">
+          ← Older
+        </a>
+      ) : <span />}
+      <a
+        href={page.currentPage === 2 ? '/' : page.url.prev}
+        class="px-4 py-2 bg-fuchsia-600 text-white rounded hover:bg-fuchsia-700 transition-colors"
+      >
+        Newer →
+      </a>
+    </div>
+  </div>
+</BaseLayout>

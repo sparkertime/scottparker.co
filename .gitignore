@@ -1,4 +1,9 @@
-_site
-.sass-cache
-.jekyll-metadata
+# Astro
+dist/
+.astro/
+
+# Node
+node_modules/
+
+# macOS
 **/.DS_Store

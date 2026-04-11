@@ -1,0 +1,18 @@
+---
+interface Props {
+  src: string;
+  caption?: string;
+  /** Override the default max-height (500px). Use "none" for full-height images. */
+  maxHeight?: string;
+}
+
+const { src, caption, maxHeight = '500px' } = Astro.props;
+---
+<figure class="figure-include">
+  <img
+    src={src}
+    alt={caption ?? ''}
+    style={`max-height: ${maxHeight};`}
+  />
+  {caption && <figcaption>{caption}</figcaption>}
+</figure>

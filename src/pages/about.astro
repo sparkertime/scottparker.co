@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../components/layout/BaseLayout.astro';
+---
+<BaseLayout title="About">
+  <div class="max-w-3xl mx-auto pt-14 p-4">
+
+    <!-- Photo + intro -->
+    <div class="mb-10 sm:mb-12">
+      <img
+        src="/images/scott.jpg"
+        alt="Scott Parker"
+        class="float-right ml-6 mb-4 w-36 sm:w-48 rounded-lg shadow-md"
+      />
+      <h1 class="text-4xl sm:text-5xl font-bold font-sans mb-4">Hi, I'm Scott.</h1>
+      <p class="text-lg text-slate-700 leading-relaxed mb-4">
+        I'm a software engineer, enterpreneuer, and avid gamer based in Chicago. I've spent my career building products and teams at a bunch of tech companies, and I'm currently part
+        of the crew at <a href="https://dekudeals.com" class="text-fuchsia-600 hover:text-fuchsia-800 underline">Deku Deals</a>.
+      </p>
+      <div class="clear-both"></div>
+    </div>
+
+    <!-- Side projects -->
+    <section class="mb-10">
+      <h2 class="text-2xl font-bold font-sans mb-4">Things I've built</h2>
+      <div class="grid sm:grid-cols-2 gap-4">
+        <a href="https://rpgseeker.com" class="group block p-4 rounded-lg border border-slate-200 hover:border-fuchsia-300 hover:shadow-sm transition-all">
+          <h3 class="font-sans font-semibold text-lg group-hover:text-fuchsia-600 transition-colors">RPG Seeker (RIP)</h3>
+          <p class="text-slate-500 text-sm mt-1">A marketplace for TTRPGs. Currently on hiatus?</p>
+        </a>
+        <a href="http://swsheets.com" class="group block p-4 rounded-lg border border-slate-200 hover:border-fuchsia-300 hover:shadow-sm transition-all">
+          <h3 class="font-sans font-semibold text-lg group-hover:text-fuchsia-600 transition-colors">SWSheets</h3>
+          <p class="text-slate-500 text-sm mt-1">Character sheets for the Star Wars RPG by Fantasy Flight Games.</p>
+        </a>
+        <a href="https://ti4rules.github.io/" class="group block p-4 rounded-lg border border-slate-200 hover:border-fuchsia-300 hover:shadow-sm transition-all">
+          <h3 class="font-sans font-semibold text-lg group-hover:text-fuchsia-600 transition-colors">TI4Rules</h3>
+          <p class="text-slate-500 text-sm mt-1">A searchable reference for Twilight Imperium 4th Edition rules.</p>
+        </a>
+        <a href="https://recipes.scottparker.co" class="group block p-4 rounded-lg border border-slate-200 hover:border-fuchsia-300 hover:shadow-sm transition-all">
+          <h3 class="font-sans font-semibold text-lg group-hover:text-fuchsia-600 transition-colors">Recipes</h3>
+          <p class="text-slate-500 text-sm mt-1">My personal recipe collection. Heavy on pies.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Find me -->
+    <section>
+      <h2 class="text-2xl font-bold font-sans mb-4">Find me elsewhere</h2>
+      <ul class="flex flex-wrap gap-3">
+        {[
+          { href: 'https://bsky.app/profile/scottparker.bsky.social', label: 'Bluesky' },
+          { href: 'https://letterboxd.com/hellosparker/', label: 'Letterboxd' },
+          { href: 'https://github.com/sparkertime', label: 'GitHub' },
+          { href: 'https://www.goodreads.com/user/show/5400288-scott-parker', label: 'Goodreads' },
+        ].map(({ href, label }) => (
+          <li>
+            <a
+              href={href}
+              class="inline-block px-4 py-2 rounded-full border border-slate-200 font-sans text-sm hover:border-fuchsia-400 hover:text-fuchsia-700 transition-colors"
+            >
+              {label}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+  </div>
+</BaseLayout>

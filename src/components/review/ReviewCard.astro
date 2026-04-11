@@ -1,0 +1,57 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import StarRating from './StarRating.astro';
+import { cleanSlug } from '../../utils/slugify';
+import { formatDate } from '../../utils/date';
+
+interface Props {
+  review: CollectionEntry<'reviews'>;
+}
+
+const { review } = Astro.props;
+const url = `/reviews/${cleanSlug(review.slug)}/`;
+
+const TYPE_COLORS: Record<string, string> = {
+  movie:  'bg-blue-100 text-blue-800',
+  book:   'bg-green-100 text-green-800',
+  game:   'bg-purple-100 text-purple-800',
+  tv:     'bg-yellow-100 text-yellow-800',
+  boardgame:  'bg-red-100 text-red-800',
+  other:  'bg-slate-100 text-slate-800',
+};
+
+const badgeClass = TYPE_COLORS[review.data.type] ?? TYPE_COLORS.other;
+
+const TYPE_LABELS: Record<string, string> = {
+  boardgame: 'Board Game',
+  tv: 'TV',
+};
+const typeLabel = TYPE_LABELS[review.data.type] ?? review.data.type;
+---
+<article>
+  {review.data.headerImage && (
+    <a href={url}>
+      <img
+        src={review.data.headerImage}
+        alt=""
+        class="w-full max-h-48 object-cover rounded mb-3"
+        loading="lazy"
+      />
+    </a>
+  )}
+  <div class="flex flex-col gap-2">
+    <div class="flex items-center gap-2 flex-wrap">
+      <span class:list={['text-xs font-sans px-2 py-0.5 rounded-full font-medium capitalize', badgeClass]}>
+        {typeLabel}
+      </span>
+      <StarRating rating={review.data.rating} />
+    </div>
+    <h2 class="text-2xl font-bold font-sans">
+      <a class="hover:underline" href={url}>{review.data.title}</a>
+    </h2>
+    <div class="text-slate-500 text-sm font-sans">{formatDate(review.data.date)}</div>
+    {review.data.description && (
+      <p class="text-slate-600 text-sm">{review.data.description}</p>
+    )}
+  </div>
+</article>

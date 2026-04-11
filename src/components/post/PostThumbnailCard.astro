@@ -1,0 +1,41 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { cleanSlug } from '../../utils/slugify';
+import { isoDate } from '../../utils/date';
+import { excerpt } from '../../utils/excerpt';
+
+interface Props {
+  post: CollectionEntry<'posts'>;
+}
+
+const { post } = Astro.props;
+const url = `/posts/${cleanSlug(post.slug)}/`;
+
+const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const d = post.data.date;
+const shortDate = `${MONTHS[d.getUTCMonth()]} ${d.getUTCDate()}, ${d.getUTCFullYear()}`;
+---
+<a href={url} class="group bg-white rounded-lg border border-slate-200 overflow-hidden hover:border-fuchsia-300 hover:shadow-md transition-all flex flex-col">
+  {post.data.headerImage ? (
+    <img
+      src={post.data.headerImage}
+      alt=""
+      class="w-full h-36 object-cover"
+      loading="lazy"
+    />
+  ) : (
+    <div class="w-full h-2 bg-gradient-to-r from-fuchsia-500 to-violet-600" />
+  )}
+
+  <div class="p-4 flex flex-col gap-2 grow">
+    <h3 class="font-sans font-bold text-xl leading-snug group-hover:text-fuchsia-600 transition-colors">
+      {post.data.title}
+    </h3>
+    <p class="text-slate-400 text-xs font-sans">{shortDate}</p>
+    {(post.data.description || post.body) && (
+      <p class="text-slate-600 text-sm leading-relaxed line-clamp-3 mt-auto">
+        {post.data.description ?? excerpt(post.body)}
+      </p>
+    )}
+  </div>
+</a>

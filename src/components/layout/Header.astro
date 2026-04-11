@@ -1,0 +1,68 @@
+---
+const currentPath = Astro.url.pathname;
+
+function isActive(path: string): boolean {
+  if (path === '/') return currentPath === '/';
+  return currentPath.startsWith(path);
+}
+
+const navLinks = [
+  { href: '/archive/', label: 'Archive' },
+  { href: '/reviews/', label: 'Reviews' },
+  { href: '/tags/',    label: 'Tags' },
+  { href: '/about/',   label: 'About' },
+  { href: '/feed.xml', label: 'RSS' },
+];
+---
+
+<!-- Identity band: rich gradient gives the "splash of colour" -->
+<header>
+  <div class="bg-gradient-to-r from-fuchsia-700 via-violet-700 to-indigo-700">
+    <div class="max-w-3xl mx-auto px-4 py-6 flex items-end justify-between gap-4">
+      <a href="/" class="group flex flex-col gap-0.5">
+        <span class="text-white font-sans font-bold text-3xl sm:text-4xl leading-none tracking-tight group-hover:opacity-90 transition-opacity">
+          scottparker.co
+        </span>
+        <span class="text-fuchsia-200 font-sans text-sm leading-none">
+          A generally okay human who writes here sometimes
+        </span>
+      </a>
+
+      <!-- Desktop nav sits right-aligned inside the gradient band -->
+      <nav class="hidden sm:flex items-end gap-5 font-sans text-sm font-medium pb-0.5">
+        {navLinks.map(({ href, label }) => (
+          <a
+            href={href}
+            class:list={[
+              'transition-colors leading-none pb-0.5 border-b',
+              isActive(href)
+                ? 'text-white border-white'
+                : 'text-fuchsia-200 border-transparent hover:text-white hover:border-fuchsia-300',
+            ]}
+          >
+            {label}
+          </a>
+        ))}
+      </nav>
+    </div>
+  </div>
+
+  <!-- Mobile nav strip below the gradient -->
+  <div class="sm:hidden bg-violet-900 border-t border-violet-600">
+    <div class="max-w-3xl mx-auto px-4 flex gap-5 py-2 font-sans text-sm font-medium overflow-x-auto">
+      {navLinks.map(({ href, label }) => (
+        <a
+          href={href}
+          class:list={[
+            'whitespace-nowrap transition-colors pb-0.5 border-b',
+            isActive(href)
+              ? 'text-white border-white'
+              : 'text-fuchsia-300 border-transparent hover:text-white',
+          ]}
+        >
+          {label}
+        </a>
+      ))}
+    </div>
+  </div>
+</header>

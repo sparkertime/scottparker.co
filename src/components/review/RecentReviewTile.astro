@@ -1,0 +1,47 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { cleanSlug } from '../../utils/slugify';
+import { excerpt } from '../../utils/excerpt';
+
+interface Props {
+  review: CollectionEntry<'reviews'>;
+}
+
+const { review } = Astro.props;
+const url = `/reviews/${cleanSlug(review.slug)}/`;
+const stars = '★'.repeat(review.data.rating) + '☆'.repeat(5 - review.data.rating);
+
+const TYPE_ICONS: Record<string, string> = {
+  movie: '🎬', book: '📖', game: '🎮', tv: '📺', boardgame: '🎲', other: '•',
+};
+const TYPE_LABELS: Record<string, string> = { boardgame: 'Board Game', tv: 'TV' };
+
+const icon = TYPE_ICONS[review.data.type] ?? '•';
+const typeLabel = TYPE_LABELS[review.data.type] ?? review.data.type;
+const preview = review.body.trim() ? excerpt(review.body, 90) : null;
+---
+<a href={url} class="group block bg-white rounded-lg border border-slate-200 overflow-hidden hover:border-fuchsia-300 hover:shadow-md transition-all">
+  {review.data.headerImage ? (
+    <img
+      src={review.data.headerImage}
+      alt=""
+      class="w-full h-28 object-cover"
+      loading="lazy"
+    />
+  ) : (
+    <div class="w-full h-2 bg-gradient-to-r from-fuchsia-500 to-violet-600" />
+  )}
+  <div class="p-3">
+    <p class="font-sans font-medium text-sm leading-snug group-hover:text-fuchsia-600 transition-colors line-clamp-2">
+      {review.data.title}
+    </p>
+    <p class="text-slate-400 text-xs font-sans mt-1">
+      <span>{icon}</span>
+      <span class="capitalize ml-1">{typeLabel}</span>
+      <span class="ml-2" aria-label={`${review.data.rating} stars`}>{stars}</span>
+    </p>
+    {preview && (
+      <p class="text-slate-500 text-xs font-sans mt-2 leading-relaxed line-clamp-3">{preview}</p>
+    )}
+  </div>
+</a>

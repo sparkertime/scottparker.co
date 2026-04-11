@@ -1,0 +1,58 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../components/layout/BaseLayout.astro';
+import { cleanSlug } from '../utils/slugify';
+import { excerpt } from '../utils/excerpt';
+
+const posts = (await getCollection('posts', p => !p.data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const byYear = new Map<number, typeof posts>();
+for (const post of posts) {
+  const year = post.data.date.getUTCFullYear();
+  if (!byYear.has(year)) byYear.set(year, []);
+  byYear.get(year)!.push(post);
+}
+const years = [...byYear.keys()].sort((a, b) => b - a);
+
+const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function shortDate(d: Date) {
+  return `${MONTHS[d.getUTCMonth()]} ${String(d.getUTCDate()).padStart(2, '0')}`;
+}
+---
+<BaseLayout title="Archive">
+  <div class="max-w-3xl mx-auto pt-10 p-4">
+    <h1 class="text-4xl font-bold font-sans mb-8">
+      Archive
+      <span class="text-slate-400 font-normal text-2xl ml-2">({posts.length})</span>
+    </h1>
+
+    {years.map(year => (
+      <section class="mb-10">
+        <h2 class="text-2xl font-bold font-sans text-slate-400 mb-3 border-b border-slate-200 pb-1">
+          {year}
+        </h2>
+        <ul class="space-y-3">
+          {byYear.get(year)!.map(post => {
+            const url = `/posts/${cleanSlug(post.slug)}/`;
+            return (
+              <li class="flex gap-4 items-baseline">
+                <span class="text-slate-400 font-sans text-sm tabular-nums shrink-0 w-14">
+                  {shortDate(post.data.date)}
+                </span>
+                <a href={url} class="min-w-0 block hover:text-fuchsia-600 transition-colors">
+                  <span class="font-sans font-medium">{post.data.title}</span>
+                  {(post.data.description || post.body) && (
+                    <p class="text-slate-500 text-sm mt-0.5 leading-snug">
+                      {post.data.description ?? excerpt(post.body, 180)}
+                    </p>
+                  )}
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+    ))}
+  </div>
+</BaseLayout>

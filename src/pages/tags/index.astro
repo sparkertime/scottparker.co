@@ -1,0 +1,42 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../components/layout/BaseLayout.astro';
+
+const posts = await getCollection('posts', p => !p.data.draft);
+const reviews = await getCollection('reviews', r => !r.data.draft);
+
+// Collect tags from both collections with counts
+const tagCounts = new Map<string, number>();
+[...posts, ...reviews].forEach(entry => {
+  entry.data.tags.forEach(tag => {
+    tagCounts.set(tag, (tagCounts.get(tag) ?? 0) + 1);
+  });
+});
+
+// Also include categories as tags
+posts.forEach(p => {
+  if (p.data.categories) {
+    tagCounts.set(p.data.categories, (tagCounts.get(p.data.categories) ?? 0) + 1);
+  }
+});
+
+const tags = [...tagCounts.entries()]
+  .sort(([a], [b]) => a.localeCompare(b));
+---
+<BaseLayout title="Tags">
+  <div class="max-w-3xl mx-auto pt-14 p-4">
+    <h1 class="text-4xl font-bold font-sans mb-8">Tags</h1>
+
+    <div class="flex flex-wrap gap-3">
+      {tags.map(([tag, count]) => (
+        <a
+          href={`/tags/${tag}/`}
+          class="font-sans px-3 py-1.5 rounded-full bg-fuchsia-100 text-fuchsia-800 hover:bg-fuchsia-200 transition-colors text-sm"
+        >
+          {tag}
+          <span class="ml-1 text-fuchsia-500 text-xs">({count})</span>
+        </a>
+      ))}
+    </div>
+  </div>
+</BaseLayout>

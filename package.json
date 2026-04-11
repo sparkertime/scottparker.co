@@ -1,0 +1,30 @@
+{
+  "name": "scottparker-co",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "fetch-headers": "node scripts/fetch-headers.mjs",
+    "prebuild": "node scripts/fetch-headers.mjs",
+    "new-post": "node scripts/new-post.mjs",
+    "migrate": "node scripts/migrate-posts.mjs",
+    "import-letterboxd": "node scripts/import-letterboxd.mjs",
+    "import-goodreads": "node scripts/import-goodreads.mjs",
+    "publish": "node scripts/publish.mjs"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^3.1.0",
+    "@astrojs/rss": "^4.0.7",
+    "@astrojs/tailwind": "^5.1.2",
+    "@tailwindcss/typography": "^0.5.15",
+    "astro": "^4.16.0",
+    "tailwindcss": "^3.4.14"
+  },
+  "devDependencies": {
+    "@inquirer/prompts": "^7.1.0",
+    "cheerio": "^1.2.0",
+    "gray-matter": "^4.0.3",
+    "slugify": "^1.6.6"
+  }
+}

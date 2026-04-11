@@ -1,0 +1,18 @@
+---
+import { formatDate } from '../../utils/date';
+
+interface Props {
+  date: Date;
+  categories?: string;
+}
+
+const { date, categories } = Astro.props;
+---
+<div class="text-slate-500 leading-3 font-sans">
+  {formatDate(date)}
+</div>
+{categories && (
+  <div class="text-slate-500 leading-3 font-sans mt-1">
+    Posted in <a class="a-default" href={`/tags/${categories}/`}>{categories}</a>
+  </div>
+)}

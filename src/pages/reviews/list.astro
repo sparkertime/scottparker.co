@@ -1,0 +1,71 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../components/layout/BaseLayout.astro';
+import { cleanSlug } from '../../utils/slugify';
+
+const reviews = (await getCollection('reviews', r => !r.data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const byYear = new Map<number, typeof reviews>();
+for (const review of reviews) {
+  const year = review.data.date.getUTCFullYear();
+  if (!byYear.has(year)) byYear.set(year, []);
+  byYear.get(year)!.push(review);
+}
+const years = [...byYear.keys()].sort((a, b) => b - a);
+
+const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function shortDate(d: Date) {
+  return `${MONTHS[d.getUTCMonth()]} ${String(d.getUTCDate()).padStart(2, '0')}`;
+}
+
+const TYPE_ICONS: Record<string, string> = {
+  movie: '🎬', book: '📖', game: '🎮', tv: '📺', boardgame: '🎲', other: '•',
+};
+---
+<BaseLayout title="All Reviews">
+  <div class="max-w-3xl mx-auto pt-10 p-4">
+    <div class="flex items-baseline gap-4 mb-8">
+      <h1 class="text-4xl font-bold font-sans">
+        All Reviews
+        <span class="text-slate-400 font-normal text-2xl ml-2">({reviews.length})</span>
+      </h1>
+      <a href="/reviews/" class="font-sans text-sm text-fuchsia-600 hover:text-fuchsia-800 underline">
+        ← Back to reviews
+      </a>
+    </div>
+
+    {years.map(year => (
+      <section class="mb-10">
+        <h2 class="text-2xl font-bold font-sans text-slate-400 mb-3 border-b border-slate-200 pb-1">
+          {year}
+        </h2>
+        <ul class="space-y-2">
+          {byYear.get(year)!.map(review => {
+            const url = `/reviews/${cleanSlug(review.slug)}/`;
+            const stars = '★'.repeat(review.data.rating) + '☆'.repeat(5 - review.data.rating);
+            return (
+              <li class="flex gap-2 items-baseline">
+                <span class="text-slate-400 font-sans text-sm tabular-nums shrink-0 w-12">
+                  {shortDate(review.data.date)}
+                </span>
+                <span class="shrink-0 text-sm" aria-hidden="true">{TYPE_ICONS[review.data.type] ?? '•'}</span>
+                <div class="min-w-0 flex items-baseline gap-2 flex-wrap">
+                  <a href={url} class="font-sans font-medium hover:text-fuchsia-600 transition-colors">
+                    {review.data.title}
+                  </a>
+                  {review.data.description && (
+                    <span class="text-slate-400 font-sans text-sm shrink-0">{review.data.description}</span>
+                  )}
+                  <span class="text-slate-400 text-xs font-sans shrink-0" aria-label={`${review.data.rating} stars`}>
+                    {stars}
+                  </span>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      </section>
+    ))}
+  </div>
+</BaseLayout>

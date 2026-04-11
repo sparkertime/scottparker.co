@@ -1,0 +1,36 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import PostMeta from './PostMeta.astro';
+import TagList from './TagList.astro';
+import { cleanSlug } from '../../utils/slugify';
+
+interface Props {
+  post: CollectionEntry<'posts'>;
+}
+
+const { post } = Astro.props;
+const url = `/posts/${cleanSlug(post.slug)}/`;
+---
+<article>
+  {post.data.headerImage && (
+    <a href={url}>
+      <img
+        src={post.data.headerImage}
+        alt=""
+        class="block max-w-full max-h-[500px] mx-auto rounded mb-3"
+        loading="lazy"
+      />
+    </a>
+  )}
+  <div class="flex flex-col gap-2 mb-4 font-title">
+    <h2 class="text-3xl font-bold font-sans relative">
+      <span class="text-slate-200 absolute -left-6 select-none hidden sm:inline">#</span>
+      <a class="hover:underline" href={url}>{post.data.title}</a>
+    </h2>
+    <PostMeta date={post.data.date} categories={post.data.categories} />
+    {post.data.description && (
+      <p class="text-slate-600 text-sm">{post.data.description}</p>
+    )}
+    <TagList tags={post.data.tags} />
+  </div>
+</article>

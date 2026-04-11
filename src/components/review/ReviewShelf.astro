@@ -1,0 +1,43 @@
+---
+/**
+ * Renders a compact horizontal shelf of review cards.
+ * Used on the homepage to group consecutive reviews without drowning out articles.
+ */
+import type { CollectionEntry } from 'astro:content';
+import { cleanSlug } from '../../utils/slugify';
+import StarRating from './StarRating.astro';
+
+interface Props {
+  reviews: CollectionEntry<'reviews'>[];
+}
+
+const { reviews } = Astro.props;
+---
+<div class="my-1">
+  <p class="text-xs font-sans text-slate-400 uppercase tracking-widest mb-3">Recently reviewed</p>
+  <div class="grid grid-cols-3 sm:grid-cols-4 gap-3">
+    {reviews.map(review => {
+      const url = `/reviews/${cleanSlug(review.slug)}/`;
+      return (
+        <a href={url} class="group flex flex-col gap-1.5">
+          {review.data.headerImage ? (
+            <img
+              src={review.data.headerImage}
+              alt=""
+              loading="lazy"
+              class="w-full aspect-[2/3] object-cover rounded"
+            />
+          ) : (
+            <div class="w-full aspect-[2/3] bg-gradient-to-br from-fuchsia-100 to-violet-100 rounded flex items-center justify-center">
+              <span class="text-slate-400 text-xs font-sans text-center px-2 leading-snug">{review.data.title}</span>
+            </div>
+          )}
+          <p class="text-xs font-sans font-medium leading-snug text-slate-700 group-hover:text-fuchsia-600 transition-colors line-clamp-2">
+            {review.data.title}
+          </p>
+          <StarRating rating={review.data.rating} />
+        </a>
+      );
+    })}
+  </div>
+</div>

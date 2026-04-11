@@ -1,0 +1,48 @@
+---
+import Header from './Header.astro';
+import Footer from './Footer.astro';
+import '../../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+  date?: Date;
+}
+
+const { title, description, ogImage, date } = Astro.props;
+const siteTitle = title ? `${title} | scottparker.co` : 'scottparker.co';
+---
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{siteTitle}</title>
+
+  {title && <meta itemprop="headline" content={title} />}
+  {description && <meta name="description" content={description} />}
+  {description && <meta itemprop="description" content={description} />}
+  {ogImage && <meta property="og:image" content={ogImage} />}
+  {date && <meta itemprop="datePublished" content={date.toISOString()} />}
+
+  <link rel="alternate" type="application/rss+xml" title="scottparker.co" href="/feed.xml" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png" />
+  <link rel="manifest" href="/images/favicon/site.webmanifest" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,300;0,400;0,700;1,400&family=Merriweather:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body class="bg-slate-50 pb-10">
+  <Header />
+  <slot />
+  <Footer />
+</body>
+</html>

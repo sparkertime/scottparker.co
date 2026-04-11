@@ -1,0 +1,69 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { cleanSlug } from '../../utils/slugify';
+import { excerpt } from '../../utils/excerpt';
+
+interface Props {
+  currentSlug: string;
+  category?: string;
+  allPosts: CollectionEntry<'posts'>[];
+}
+
+const { currentSlug, category, allPosts } = Astro.props;
+
+// Filter out current post
+const others = allPosts.filter(p => p.slug !== currentSlug);
+
+// Prefer same-category posts, fall back to most-recent
+let candidates = category
+  ? others.filter(p => p.data.categories === category)
+  : others;
+
+if (candidates.length < 3) candidates = others;
+
+const related = candidates.slice(0, 3);
+---
+{related.length > 0 && (
+  <div>
+    <hr class="article-divider my-4" />
+    <h3 class="text-xl text-center my-3 font-sans">
+      More Posts
+      {category && (
+        <span>
+          {' '}in {category.charAt(0).toUpperCase() + category.slice(1)}
+          <span class="inline-block ml-2 text-base text-slate-400">
+            (<a class="underline hover:text-slate-800" href={`/tags/${category}/`}>view all</a>)
+          </span>
+        </span>
+      )}
+    </h3>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      {related.map((post, i) => {
+        const url = `/posts/${cleanSlug(post.slug)}/`;
+        return (
+          <a
+            href={url}
+            rel="permalink"
+            class:list={['block', i === 2 ? 'hidden md:block' : '']}
+          >
+            <h4 class="text-lg font-semibold a-default mb-2 font-sans">{post.data.title}</h4>
+            {post.data.headerImage ? (
+              <>
+                <div class="w-full">
+                  <img src={post.data.headerImage} alt="" loading="lazy" class="max-w-full max-h-40 mx-auto block" />
+                </div>
+                <p itemprop="description" class="text-xs text-slate-600 mt-1">
+                  {post.data.description ?? excerpt(post.body, 140)}
+                </p>
+              </>
+            ) : (
+              <p itemprop="description" class="text-xs text-slate-600">
+                {post.data.description ?? excerpt(post.body, 140)}
+              </p>
+            )}
+          </a>
+        );
+      })}
+    </div>
+  </div>
+)}

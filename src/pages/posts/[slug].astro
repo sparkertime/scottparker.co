@@ -1,0 +1,60 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../components/layout/BaseLayout.astro';
+import Figure from '../../components/Figure.astro';
+import PostMeta from '../../components/post/PostMeta.astro';
+import TagList from '../../components/post/TagList.astro';
+import RelatedPosts from '../../components/post/RelatedPosts.astro';
+import { cleanSlug } from '../../utils/slugify';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts', p => !p.data.draft);
+  const allPosts = posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+  return allPosts.map(entry => ({
+    params: { slug: cleanSlug(entry.slug) },
+    props: { entry, allPosts },
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<'posts'>;
+  allPosts: CollectionEntry<'posts'>[];
+}
+
+const { entry, allPosts } = Astro.props;
+const { Content } = await entry.render();
+---
+<BaseLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  ogImage={entry.data.headerImage}
+  date={entry.data.date}
+>
+  <div class="content max-w-3xl mx-auto pt-10 p-4">
+    <section>
+      <div class="flex flex-col gap-2 mb-6 font-title">
+        <h1 class="text-4xl sm:text-6xl font-bold font-sans relative">
+          <span class="text-slate-200 absolute -left-10 select-none hidden sm:inline">#</span>
+          {entry.data.title}
+        </h1>
+        <PostMeta date={entry.data.date} categories={entry.data.categories} />
+        {entry.data.tags.length > 0 && (
+          <TagList tags={entry.data.tags} />
+        )}
+      </div>
+
+      <div class="prose max-w-none">
+        <Content components={{ Figure }} />
+      </div>
+    </section>
+  </div>
+
+  <!-- Outside .content so .content img styles don't affect the thumbnails -->
+  <div class="max-w-3xl mx-auto px-4">
+    <RelatedPosts
+      currentSlug={entry.slug}
+      category={entry.data.categories}
+      allPosts={allPosts}
+    />
+  </div>
+</BaseLayout>

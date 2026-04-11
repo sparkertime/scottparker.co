@@ -1,0 +1,105 @@
+---
+import { getCollection, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../components/layout/BaseLayout.astro';
+import StarRating from '../../components/review/StarRating.astro';
+import TagList from '../../components/post/TagList.astro';
+import RelatedReviews from '../../components/review/RelatedReviews.astro';
+import { cleanSlug } from '../../utils/slugify';
+import { formatDate } from '../../utils/date';
+
+export async function getStaticPaths() {
+  const reviews = await getCollection('reviews', r => !r.data.draft);
+  return reviews.map(entry => ({
+    params: { slug: cleanSlug(entry.slug) },
+    props: { entry, allReviews: reviews },
+  }));
+}
+
+interface Props {
+  entry: CollectionEntry<'reviews'>;
+  allReviews: CollectionEntry<'reviews'>[];
+}
+
+const { entry, allReviews } = Astro.props;
+const { Content } = await entry.render();
+
+const TYPE_LABELS: Record<string, string> = {
+  movie: 'Movie',
+  book: 'Book',
+  game: 'Game',
+  tv: 'TV',
+  boardgame: 'Board Game',
+  other: 'Other',
+};
+
+const EXTERNAL_LINK_LABELS: Record<string, string> = {
+  movie: 'View on Letterboxd',
+  tv: 'View on Letterboxd',
+  game: 'View on Deku Deals',
+  boardgame: 'View on BoardGameGeek',
+  book:  'View on Goodreads',
+};
+---
+<BaseLayout
+  title={entry.data.title}
+  description={entry.data.description}
+  ogImage={entry.data.headerImage}
+  date={entry.data.date}
+>
+  <div class="max-w-3xl mx-auto pt-10 p-4">
+    <section>
+      <div class="flex flex-col gap-3 mb-6">
+        <div class="flex items-center gap-2 font-sans text-sm text-slate-500">
+          <a href="/reviews/" class="hover:text-fuchsia-600 transition-colors">Reviews</a>
+          <span>›</span>
+          <span class="capitalize">{TYPE_LABELS[entry.data.type] ?? entry.data.type}</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-6xl font-bold font-sans relative">
+          <span class="text-slate-200 absolute -left-10 select-none hidden sm:inline">#</span>
+          {entry.data.title}
+        </h1>
+
+        <div class="flex items-center gap-3 flex-wrap">
+          <StarRating rating={entry.data.rating} />
+          <span class="text-slate-500 font-sans text-sm">{formatDate(entry.data.date)}</span>
+        </div>
+
+        {entry.data.description && (
+          <p class="text-slate-500 font-sans text-base">{entry.data.description}</p>
+        )}
+
+        {entry.data.externalUrl && (
+          <a
+            href={entry.data.externalUrl}
+            class="font-sans text-sm text-fuchsia-600 hover:text-fuchsia-800 underline"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {EXTERNAL_LINK_LABELS[entry.data.type] ?? 'View review'} →
+          </a>
+        )}
+
+        {entry.data.tags.length > 0 && (
+          <TagList tags={entry.data.tags} />
+        )}
+      </div>
+
+      <!-- Poster + prose side by side on desktop, stacked on mobile -->
+      <div class="flex flex-col sm:flex-row gap-6 items-start">
+        {entry.data.headerImage && (
+          <img
+            src={entry.data.headerImage}
+            alt={entry.data.title}
+            class="w-36 rounded-md shrink-0 mx-auto sm:mx-0 sm:order-last"
+          />
+        )}
+        <div class="content prose max-w-none grow">
+          <Content />
+        </div>
+      </div>
+    </section>
+
+    <RelatedReviews currentEntry={entry} allReviews={allReviews} />
+  </div>
+</BaseLayout>

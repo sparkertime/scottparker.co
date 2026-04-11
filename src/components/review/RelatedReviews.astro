@@ -1,0 +1,76 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { cleanSlug } from '../../utils/slugify';
+import StarRating from './StarRating.astro';
+
+interface Props {
+  currentEntry: CollectionEntry<'reviews'>;
+  allReviews: CollectionEntry<'reviews'>[];
+}
+
+const { currentEntry, allReviews } = Astro.props;
+const currentDate = currentEntry.data.date.valueOf();
+
+const others = allReviews.filter(r => r.slug !== currentEntry.slug);
+
+// Sort everything by date proximity to the current review
+const byProximity = [...others].sort(
+  (a, b) =>
+    Math.abs(a.data.date.valueOf() - currentDate) -
+    Math.abs(b.data.date.valueOf() - currentDate)
+);
+
+// Up to 2 from the same type, nearest first
+const sameType = byProximity
+  .filter(r => r.data.type === currentEntry.data.type)
+  .slice(0, 2);
+
+// Fill remaining slots with nearest-by-date reviews not already picked
+const picked = new Set(sameType.map(r => r.slug));
+const nearby = byProximity.filter(r => !picked.has(r.slug));
+
+const related = [...sameType, ...nearby].slice(0, 3);
+
+const TYPE_LABELS: Record<string, string> = {
+  movie: 'Movies', book: 'Books', game: 'Games',
+  tv: 'TV', boardgame: 'Board Games', other: 'Reviews',
+};
+const typeLabel = TYPE_LABELS[currentEntry.data.type] ?? 'Reviews';
+---
+{related.length > 0 && (
+  <div>
+    <hr class="article-divider my-4" />
+    <h3 class="text-xl text-center my-3 font-sans">
+      More {typeLabel}
+      <span class="inline-block ml-2 text-base text-slate-400">
+        (<a class="underline hover:text-slate-800" href="/reviews/">view all</a>)
+      </span>
+    </h3>
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      {related.map((review, i) => {
+        const url = `/reviews/${cleanSlug(review.slug)}/`;
+        return (
+          <a
+            href={url}
+            class:list={['block group', i === 2 ? 'hidden md:block' : '']}
+          >
+            {review.data.headerImage ? (
+              <img
+                src={review.data.headerImage}
+                alt=""
+                loading="lazy"
+                class="w-full max-h-40 object-cover rounded mb-2"
+              />
+            ) : (
+              <div class="w-full h-1 bg-gradient-to-r from-fuchsia-500 to-violet-600 rounded mb-2" />
+            )}
+            <h4 class="text-base font-semibold font-sans leading-snug group-hover:text-fuchsia-600 transition-colors mb-1">
+              {review.data.title}
+            </h4>
+            <StarRating rating={review.data.rating} />
+          </a>
+        );
+      })}
+    </div>
+  </div>
+)}

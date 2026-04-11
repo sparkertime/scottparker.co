@@ -1,0 +1,83 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../components/layout/BaseLayout.astro';
+import Figure from '../components/Figure.astro';
+import PostMeta from '../components/post/PostMeta.astro';
+import TagList from '../components/post/TagList.astro';
+import RecentReviewTile from '../components/review/RecentReviewTile.astro';
+import { cleanSlug } from '../utils/slugify';
+
+const PAGE_SIZE = 10;
+const RECENT_REVIEWS_COUNT = 6;
+
+const allPosts = (await getCollection('posts', p => !p.data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+const recentReviews = (await getCollection('reviews', r => !r.data.draft))
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, RECENT_REVIEWS_COUNT);
+
+const pageItems = allPosts.slice(0, PAGE_SIZE);
+const hasNextPage = allPosts.length > PAGE_SIZE;
+
+const rendered = await Promise.all(
+  pageItems.map(async post => ({
+    entry: post,
+    url: `/posts/${cleanSlug(post.slug)}/`,
+    Content: (await post.render()).Content,
+  }))
+);
+---
+<BaseLayout>
+  <div class="max-w-3xl mx-auto pt-10 p-4">
+    {recentReviews.length > 0 && (
+      <>
+        <section class="mb-10">
+          <div class="flex items-baseline justify-between mb-4">
+            <h2 class="text-lg font-bold font-sans text-slate-600">Recent Reviews</h2>
+            <a href="/reviews/" class="font-sans text-sm text-fuchsia-600 hover:text-fuchsia-800 underline transition-colors">
+              Browse all →
+            </a>
+          </div>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-3">
+            {recentReviews.map(review => (
+              <RecentReviewTile review={review} />
+            ))}
+          </div>
+        </section>
+        <hr class="article-divider" />
+      </>
+    )}
+
+    {rendered.map((item, i) => (
+      <>
+        <article class="content">
+          <div class="flex flex-col gap-2 mb-6">
+            <h2 class="text-4xl sm:text-5xl font-bold font-sans relative">
+              <span class="text-slate-200 absolute -left-8 select-none hidden sm:inline">#</span>
+              <a class="hover:underline" href={item.url}>{item.entry.data.title}</a>
+            </h2>
+            <PostMeta date={item.entry.data.date} categories={item.entry.data.categories} />
+            <TagList tags={item.entry.data.tags} />
+          </div>
+          <div class="prose max-w-none">
+            <item.Content components={{ Figure }} />
+          </div>
+        </article>
+
+        {i < rendered.length - 1 && <hr class="article-divider" />}
+      </>
+    ))}
+
+    {hasNextPage && (
+      <div class="flex justify-start mt-12 font-sans text-sm">
+        <a
+          href="/page/2/"
+          class="px-4 py-2 bg-fuchsia-600 text-white rounded hover:bg-fuchsia-700 transition-colors"
+        >
+          ← Older
+        </a>
+      </div>
+    )}
+  </div>
+</BaseLayout>

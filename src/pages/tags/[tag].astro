@@ -1,0 +1,112 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../components/layout/BaseLayout.astro';
+import PostThumbnailCard from '../../components/post/PostThumbnailCard.astro';
+import StarRating from '../../components/review/StarRating.astro';
+import { cleanSlug } from '../../utils/slugify';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts', p => !p.data.draft);
+  const reviews = await getCollection('reviews', r => !r.data.draft);
+
+  const tagMap = new Map<string, { posts: typeof posts; reviews: typeof reviews }>();
+
+  function addToTag(tag: string, post?: (typeof posts)[0], review?: (typeof reviews)[0]) {
+    if (!tagMap.has(tag)) tagMap.set(tag, { posts: [], reviews: [] });
+    const entry = tagMap.get(tag)!;
+    if (post) entry.posts.push(post);
+    if (review) entry.reviews.push(review);
+  }
+
+  posts.forEach(p => {
+    p.data.tags.forEach(tag => addToTag(tag, p));
+    if (p.data.categories) addToTag(p.data.categories, p);
+  });
+
+  reviews.forEach(r => {
+    r.data.tags.forEach(tag => addToTag(tag, undefined, r));
+    addToTag(r.data.type, undefined, r);
+  });
+
+  return [...tagMap.entries()].map(([tag, items]) => ({
+    params: { tag },
+    props: {
+      tag,
+      tagPosts: items.posts.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()),
+      tagReviews: items.reviews.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()),
+    },
+  }));
+}
+
+const { tag, tagPosts, tagReviews } = Astro.props;
+const total = tagPosts.length + tagReviews.length;
+
+const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+function shortDate(d: Date) {
+  return `${MONTHS[d.getUTCMonth()]} ${d.getUTCDate()}, ${d.getUTCFullYear()}`;
+}
+
+const TYPE_COLORS: Record<string, string> = {
+  movie: 'bg-blue-100 text-blue-800',
+  book:  'bg-green-100 text-green-800',
+  game:  'bg-purple-100 text-purple-800',
+  tv:    'bg-yellow-100 text-yellow-800',
+  boardgame: 'bg-red-100 text-red-800',
+  other: 'bg-slate-100 text-slate-800',
+};
+
+const TYPE_LABELS: Record<string, string> = {
+  boardgame: 'Board Game',
+  tv: 'TV',
+};
+---
+<BaseLayout title={`Tag: ${tag}`}>
+  <div class="max-w-3xl mx-auto pt-10 p-4">
+    <div class="mb-8">
+      <a href="/tags/" class="font-sans text-sm text-slate-500 hover:text-fuchsia-600 transition-colors">
+        ← All tags
+      </a>
+      <h1 class="text-4xl font-bold font-sans mt-2">
+        {tag}
+        <span class="text-slate-400 font-normal text-2xl ml-2">({total})</span>
+      </h1>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+      {tagPosts.map(post => (
+        <PostThumbnailCard post={post} />
+      ))}
+
+      {tagReviews.map(review => {
+        const url = `/reviews/${cleanSlug(review.slug)}/`;
+        const badgeClass = TYPE_COLORS[review.data.type] ?? TYPE_COLORS['other'];
+        return (
+          <a href={url} class="group bg-white rounded-lg border border-slate-200 overflow-hidden hover:border-fuchsia-300 hover:shadow-md transition-all flex flex-col">
+            {review.data.headerImage ? (
+              <img src={review.data.headerImage} alt="" class="w-full h-36 object-cover" loading="lazy" />
+            ) : (
+              <div class="w-full h-2 bg-gradient-to-r from-fuchsia-500 to-violet-600" />
+            )}
+            <div class="p-4 flex flex-col gap-2 grow">
+              <div class="flex items-center gap-2">
+                <span class:list={['text-xs font-sans px-2 py-0.5 rounded-full font-medium capitalize', badgeClass]}>
+                  {TYPE_LABELS[review.data.type] ?? review.data.type}
+                </span>
+                <StarRating rating={review.data.rating} />
+              </div>
+              <h3 class="font-sans font-bold text-xl leading-snug group-hover:text-fuchsia-600 transition-colors">
+                {review.data.title}
+              </h3>
+              <p class="text-slate-400 text-xs font-sans">{shortDate(review.data.date)}</p>
+              {review.data.description && (
+                <p class="text-slate-600 text-sm leading-relaxed line-clamp-3 mt-auto">
+                  {review.data.description}
+                </p>
+              )}
+            </div>
+          </a>
+        );
+      })}
+    </div>
+  </div>
+</BaseLayout>
