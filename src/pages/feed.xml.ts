@@ -52,7 +52,7 @@ export async function GET(context: APIContext) {
       const imgSrc = p.data.headerImage.startsWith('http')
         ? p.data.headerImage
         : `${site}${p.data.headerImage}`;
-      content += `<p><img src="${escapeHtml(imgSrc)}" alt="${escapeHtml(p.data.title)}" style="max-width:100%" /></p>`;
+      content += `<p><img src="${escapeHtml(imgSrc)}" alt="${escapeHtml(p.data.title)}" style="max-width:300px;width:100%" /></p>`;
     }
     content += bodyHtml;
 
